@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="InterageModelStoreContainer" CdmEntityContainer="Contexto">
+    <EntitySetMapping Name="AreaInteresse">
+      <EntityTypeMapping TypeName="InterageModel.AreaInteresse">
+        <MappingFragment StoreEntitySet="AreaInteresse">
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Interesse" ColumnName="Interesse" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Atividade">
+      <EntityTypeMapping TypeName="InterageModel.Atividade">
+        <MappingFragment StoreEntitySet="Atividade">
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="CodEvento" ColumnName="CodEvento" />
+          <ScalarProperty Name="DescricaoAtividade" ColumnName="DescricaoAtividade" />
+          <ScalarProperty Name="HorarioAtividade" ColumnName="HorarioAtividade" />
+          <ScalarProperty Name="Endereco" ColumnName="Endereco" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Evento">
+      <EntityTypeMapping TypeName="InterageModel.Evento">
+        <MappingFragment StoreEntitySet="Evento">
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="CodUsuario" ColumnName="CodUsuario" />
+          <ScalarProperty Name="CPFUsuarioPromotor" ColumnName="CPFUsuarioPromotor" />
+          <ScalarProperty Name="CodAreaInteresse" ColumnName="CodAreaInteresse" />
+          <ScalarProperty Name="LocalizacaoLatitude" ColumnName="LocalizacaoLatitude" />
+          <ScalarProperty Name="LocalizacaoLogitude" ColumnName="LocalizacaoLogitude" />
+          <ScalarProperty Name="DataInicio" ColumnName="DataInicio" />
+          <ScalarProperty Name="DataFim" ColumnName="DataFim" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Feedback">
+      <EntityTypeMapping TypeName="InterageModel.Feedback">
+        <MappingFragment StoreEntitySet="Feedback">
+          <ScalarProperty Name="CodEvento" ColumnName="CodEvento" />
+          <ScalarProperty Name="CodUsuario" ColumnName="CodUsuario" />
+          <ScalarProperty Name="TipoFeedback" ColumnName="TipoFeedback" />
+          <ScalarProperty Name="MensagemFeedback" ColumnName="Feedback" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SalaDiscussao">
+      <EntityTypeMapping TypeName="InterageModel.SalaDiscussao">
+        <MappingFragment StoreEntitySet="SalaDiscussao">
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="CodAtividade" ColumnName="CodAtividade" />
+          <ScalarProperty Name="CodExpectador" ColumnName="CodExpectador" />
+          <ScalarProperty Name="CPFExpectador" ColumnName="CPFExpectador" />
+          <ScalarProperty Name="Fechada" ColumnName="Fechada" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="InterageModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Senha" ColumnName="Senha" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsuarioExpectador">
+      <EntityTypeMapping TypeName="InterageModel.UsuarioExpectador">
+        <MappingFragment StoreEntitySet="UsuarioExpectador">
+          <ScalarProperty Name="CodUsuario" ColumnName="CodUsuario" />
+          <ScalarProperty Name="CPF" ColumnName="CPF" />
+          <ScalarProperty Name="PermiteInteragir" ColumnName="PermiteInteragir" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsuarioExpositor">
+      <EntityTypeMapping TypeName="InterageModel.UsuarioExpositor">
+        <MappingFragment StoreEntitySet="UsuarioExpositor">
+          <ScalarProperty Name="CodUsuario" ColumnName="CodUsuario" />
+          <ScalarProperty Name="CPF" ColumnName="CPF" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsuarioPadrao">
+      <EntityTypeMapping TypeName="InterageModel.UsuarioPadrao">
+        <MappingFragment StoreEntitySet="UsuarioPadrao">
+          <ScalarProperty Name="CodUsuario" ColumnName="CodUsuario" />
+          <ScalarProperty Name="CPF" ColumnName="CPF" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsuarioPromotor">
+      <EntityTypeMapping TypeName="InterageModel.UsuarioPromotor">
+        <MappingFragment StoreEntitySet="UsuarioPromotor">
+          <ScalarProperty Name="CodUsuario" ColumnName="CodUsuario" />
+          <ScalarProperty Name="CPF" ColumnName="CPF" />
+          <ScalarProperty Name="Endereco" ColumnName="Endereco" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="ExpositorAtividade" TypeName="InterageModel.ExpositorAtividade" StoreEntitySet="ExpositorAtividade">
+      <EndProperty Name="Atividade">
+        <ScalarProperty Name="Codigo" ColumnName="CodAtividade" />
+      </EndProperty>
+      <EndProperty Name="UsuarioExpositor">
+        <ScalarProperty Name="CodUsuario" ColumnName="CodUsuario" />
+        <ScalarProperty Name="CPF" ColumnName="CPFExpositor" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UsuarioInteresse" TypeName="InterageModel.UsuarioInteresse" StoreEntitySet="UsuarioInteresse">
+      <EndProperty Name="AreaInteresse">
+        <ScalarProperty Name="Codigo" ColumnName="CodInteresse" />
+      </EndProperty>
+      <EndProperty Name="UsuarioPadrao">
+        <ScalarProperty Name="CodUsuario" ColumnName="CodUsuario" />
+        <ScalarProperty Name="CPF" ColumnName="CPFUsuario" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
