@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="InterageModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="InterageModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="AreaInteresse">
           <Key>
             <PropertyRef Name="Codigo" />
@@ -299,15 +299,17 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="usuariopromotor_usuario_fk">
-          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
-          <End Role="UsuarioPromotor" Type="Self.UsuarioPromotor" Multiplicity="*" />
+        <Association Name="usuariopromotor_usuariopadrao_fk">
+          <End Role="UsuarioPadrao" Type="Self.UsuarioPadrao" Multiplicity="1" />
+          <End Role="UsuarioPromotor" Type="Self.UsuarioPromotor" Multiplicity="0..1" />
           <ReferentialConstraint>
-            <Principal Role="Usuario">
-              <PropertyRef Name="Codigo" />
+            <Principal Role="UsuarioPadrao">
+              <PropertyRef Name="CodUsuario" />
+              <PropertyRef Name="CPF" />
             </Principal>
             <Dependent Role="UsuarioPromotor">
               <PropertyRef Name="CodUsuario" />
+              <PropertyRef Name="CPF" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -380,13 +382,12 @@
             <End Role="Usuario" EntitySet="Usuario" />
             <End Role="UsuarioPadrao" EntitySet="UsuarioPadrao" />
           </AssociationSet>
-          <AssociationSet Name="usuariopromotor_usuario_fk" Association="Self.usuariopromotor_usuario_fk">
-            <End Role="Usuario" EntitySet="Usuario" />
+          <AssociationSet Name="usuariopromotor_usuariopadrao_fk" Association="Self.usuariopromotor_usuariopadrao_fk">
+            <End Role="UsuarioPadrao" EntitySet="UsuarioPadrao" />
             <End Role="UsuarioPromotor" EntitySet="UsuarioPromotor" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="InterageModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -456,15 +457,14 @@
         </EntityType>
         <EntityType Name="Usuario">
           <Key>
-            <PropertyRef Name="Codigo" />
+            <PropertyRef Name="CodUsuario" />
           </Key>
-          <Property Name="Codigo" Type="Int32" Nullable="false" />
+          <Property Name="CodUsuario" Type="Int32" Nullable="false" />
           <Property Name="Nome" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Senha" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Feedbacks" Relationship="Self.feedback_usuario_fk" FromRole="Usuario" ToRole="Feedback" />
           <NavigationProperty Name="UsuariosPadrao" Relationship="Self.usuariopadrao_usuario_fk" FromRole="Usuario" ToRole="UsuarioPadrao" />
-          <NavigationProperty Name="UsuariosPromotores" Relationship="Self.usuariopromotor_usuario_fk" FromRole="Usuario" ToRole="UsuarioPromotor" />
         </EntityType>
         <EntityType Name="UsuarioExpectador">
           <Key>
@@ -498,6 +498,7 @@
           <NavigationProperty Name="UsuarioExpectador" Relationship="Self.usuarioexpectador_usuariopadrao_fk" FromRole="UsuarioPadrao" ToRole="UsuarioExpectador" />
           <NavigationProperty Name="UsuarioExpositor" Relationship="Self.usuarioexpositor_usuariopadrao_fk" FromRole="UsuarioPadrao" ToRole="UsuarioExpositor" />
           <NavigationProperty Name="AreasInteresse" Relationship="Self.UsuarioInteresse" FromRole="UsuarioPadrao" ToRole="AreaInteresse" />
+          <NavigationProperty Name="UsuarioPromotor" Relationship="InterageModel.usuariopromotor_usuariopadrao_fk" FromRole="UsuarioPadrao" ToRole="UsuarioPromotor" />
         </EntityType>
         <EntityType Name="UsuarioPromotor">
           <Key>
@@ -508,7 +509,7 @@
           <Property Name="CPF" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Endereco" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Eventos" Relationship="Self.evento_usuariopromotor_fk" FromRole="UsuarioPromotor" ToRole="Evento" />
-          <NavigationProperty Name="Usuario" Relationship="Self.usuariopromotor_usuario_fk" FromRole="UsuarioPromotor" ToRole="Usuario" />
+          <NavigationProperty Name="UsuarioPadrao" Relationship="InterageModel.usuariopromotor_usuariopadrao_fk" FromRole="UsuarioPromotor" ToRole="UsuarioPadrao" />
         </EntityType>
         <Association Name="evento_areainteress_fk">
           <End Role="AreaInteresse" Type="Self.AreaInteresse" Multiplicity="0..1" />
@@ -577,7 +578,7 @@
           <End Role="Feedback" Type="Self.Feedback" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuario">
-              <PropertyRef Name="Codigo" />
+              <PropertyRef Name="CodUsuario" />
             </Principal>
             <Dependent Role="Feedback">
               <PropertyRef Name="CodUsuario" />
@@ -603,21 +604,9 @@
           <End Role="UsuarioPadrao" Type="Self.UsuarioPadrao" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuario">
-              <PropertyRef Name="Codigo" />
+              <PropertyRef Name="CodUsuario" />
             </Principal>
             <Dependent Role="UsuarioPadrao">
-              <PropertyRef Name="CodUsuario" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="usuariopromotor_usuario_fk">
-          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
-          <End Role="UsuarioPromotor" Type="Self.UsuarioPromotor" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Usuario">
-              <PropertyRef Name="Codigo" />
-            </Principal>
-            <Dependent Role="UsuarioPromotor">
               <PropertyRef Name="CodUsuario" />
             </Dependent>
           </ReferentialConstraint>
@@ -701,10 +690,6 @@
             <End Role="Usuario" EntitySet="Usuario" />
             <End Role="UsuarioPadrao" EntitySet="UsuarioPadrao" />
           </AssociationSet>
-          <AssociationSet Name="usuariopromotor_usuario_fk" Association="Self.usuariopromotor_usuario_fk">
-            <End Role="Usuario" EntitySet="Usuario" />
-            <End Role="UsuarioPromotor" EntitySet="UsuarioPromotor" />
-          </AssociationSet>
           <AssociationSet Name="usuarioexpectador_usuariopadrao_fk" Association="Self.usuarioexpectador_usuariopadrao_fk">
             <End Role="UsuarioPadrao" EntitySet="UsuarioPadrao" />
             <End Role="UsuarioExpectador" EntitySet="UsuarioExpectador" />
@@ -721,7 +706,25 @@
             <End Role="AreaInteresse" EntitySet="AreaInteresse" />
             <End Role="UsuarioPadrao" EntitySet="UsuarioPadrao" />
           </AssociationSet>
+          <AssociationSet Name="usuariopromotor_usuariopadrao_fk" Association="InterageModel.usuariopromotor_usuariopadrao_fk">
+            <End Role="UsuarioPadrao" EntitySet="UsuarioPadrao" />
+            <End Role="UsuarioPromotor" EntitySet="UsuarioPromotor" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="usuariopromotor_usuariopadrao_fk">
+          <End Type="InterageModel.UsuarioPadrao" Role="UsuarioPadrao" Multiplicity="1" />
+          <End Type="InterageModel.UsuarioPromotor" Role="UsuarioPromotor" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="UsuarioPadrao">
+              <PropertyRef Name="CodUsuario" />
+              <PropertyRef Name="CPF" />
+            </Principal>
+            <Dependent Role="UsuarioPromotor">
+              <PropertyRef Name="CodUsuario" />
+              <PropertyRef Name="CPF" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -786,7 +789,7 @@
           <EntitySetMapping Name="Usuario">
             <EntityTypeMapping TypeName="InterageModel.Usuario">
               <MappingFragment StoreEntitySet="Usuario">
-                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="CodUsuario" ColumnName="Codigo" />
                 <ScalarProperty Name="Nome" ColumnName="Nome" />
                 <ScalarProperty Name="Senha" ColumnName="Senha" />
                 <ScalarProperty Name="Email" ColumnName="Email" />

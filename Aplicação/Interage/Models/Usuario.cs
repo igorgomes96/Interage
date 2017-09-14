@@ -19,10 +19,9 @@ namespace Interage.Models
         {
             this.Feedbacks = new HashSet<Feedback>();
             this.UsuariosPadrao = new HashSet<UsuarioPadrao>();
-            this.UsuariosPromotores = new HashSet<UsuarioPromotor>();
         }
     
-        public int Codigo { get; set; }
+        public int CodUsuario { get; set; }
         public string Nome { get; set; }
         public string Senha { get; set; }
         public string Email { get; set; }
@@ -31,7 +30,5 @@ namespace Interage.Models
         public virtual ICollection<Feedback> Feedbacks { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UsuarioPadrao> UsuariosPadrao { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<UsuarioPromotor> UsuariosPromotores { get; set; }
     }
 }

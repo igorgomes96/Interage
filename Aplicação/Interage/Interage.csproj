@@ -122,10 +122,22 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AreasInteresseController.cs" />
+    <Compile Include="Controllers\AtividadesController.cs" />
+    <Compile Include="Controllers\EventosController.cs" />
+    <Compile Include="Controllers\UsuariosPadroesController.cs" />
+    <Compile Include="DTO\AreaInteresseDTO.cs" />
     <Compile Include="Controllers\FeedbacksController.cs" />
     <Compile Include="Controllers\SalasDiscussoesController.cs" />
-    <Compile Include="Controllers\TesteController.cs" />
+    <Compile Include="DTO\AtividadeDTO.cs" />
+    <Compile Include="DTO\EventoDTO.cs" />
     <Compile Include="DTO\FeedbackDTO.cs" />
+    <Compile Include="DTO\SalaDiscussaoDTO.cs" />
+    <Compile Include="DTO\UsuarioDTO.cs" />
+    <Compile Include="DTO\UsuarioExpectadorDTO.cs" />
+    <Compile Include="DTO\UsuarioExpositorDTO.cs" />
+    <Compile Include="DTO\UsuarioPadraoDTO.cs" />
+    <Compile Include="DTO\UsuarioPromotorDTO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -174,13 +186,9 @@
     <Compile Include="Models\UsuarioPromotor.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
-    <Compile Include="Orion\AttributeObject.cs" />
-    <Compile Include="Orion\ContextElements.cs" />
-    <Compile Include="Orion\Entity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\web.config" />
     <Content Include="packages.config" />
     <EntityDeploy Include="Models\Modelo.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

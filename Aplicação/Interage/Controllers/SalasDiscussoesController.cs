@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using Interage.Models;
+using Interage.DTO;
 
 namespace Interage.Controllers
 {
@@ -17,13 +18,14 @@ namespace Interage.Controllers
         private Contexto db = new Contexto();
 
         // GET: api/SalasDiscussoes
-        public IQueryable<SalaDiscussao> GetSalaDiscussao()
+        public IEnumerable<SalaDiscussaoDTO> GetSalaDiscussao()
         {
-            return db.SalaDiscussao;
+            return db.SalaDiscussao.ToList()
+                .Select(x => new SalaDiscussaoDTO(x));
         }
 
         // GET: api/SalasDiscussoes/5
-        [ResponseType(typeof(SalaDiscussao))]
+        [ResponseType(typeof(SalaDiscussaoDTO))]
         public IHttpActionResult GetSalaDiscussao(int id)
         {
             SalaDiscussao salaDiscussao = db.SalaDiscussao.Find(id);
@@ -32,7 +34,7 @@ namespace Interage.Controllers
                 return NotFound();
             }
 
-            return Ok(salaDiscussao);
+            return Ok(new SalaDiscussaoDTO(salaDiscussao));
         }
 
         // PUT: api/SalasDiscussoes/5
@@ -55,23 +57,16 @@ namespace Interage.Controllers
             {
                 db.SaveChanges();
             }
-            catch (DbUpdateConcurrencyException)
+            catch (Exception e)
             {
-                if (!SalaDiscussaoExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                return InternalServerError(e);
             }
 
             return StatusCode(HttpStatusCode.NoContent);
         }
 
         // POST: api/SalasDiscussoes
-        [ResponseType(typeof(SalaDiscussao))]
+        [ResponseType(typeof(SalaDiscussaoDTO))]
         public IHttpActionResult PostSalaDiscussao(SalaDiscussao salaDiscussao)
         {
             if (!ModelState.IsValid)
@@ -85,23 +80,16 @@ namespace Interage.Controllers
             {
                 db.SaveChanges();
             }
-            catch (DbUpdateException)
+            catch (Exception e)
             {
-                if (SalaDiscussaoExists(salaDiscussao.Codigo))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
+                return InternalServerError(e);
             }
 
-            return CreatedAtRoute("DefaultApi", new { id = salaDiscussao.Codigo }, salaDiscussao);
+            return CreatedAtRoute("DefaultApi", new { id = salaDiscussao.Codigo }, new SalaDiscussaoDTO(salaDiscussao));
         }
 
         // DELETE: api/SalasDiscussoes/5
-        [ResponseType(typeof(SalaDiscussao))]
+        [ResponseType(typeof(SalaDiscussaoDTO))]
         public IHttpActionResult DeleteSalaDiscussao(int id)
         {
             SalaDiscussao salaDiscussao = db.SalaDiscussao.Find(id);
@@ -110,10 +98,11 @@ namespace Interage.Controllers
                 return NotFound();
             }
 
+            SalaDiscussaoDTO s = new SalaDiscussaoDTO(salaDiscussao);
             db.SalaDiscussao.Remove(salaDiscussao);
             db.SaveChanges();
 
-            return Ok(salaDiscussao);
+            return Ok(s);
         }
 
         protected override void Dispose(bool disposing)
