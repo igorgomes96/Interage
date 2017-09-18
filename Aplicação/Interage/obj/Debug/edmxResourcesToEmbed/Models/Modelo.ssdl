@@ -294,15 +294,17 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="usuariopromotor_usuario_fk">
-    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
-    <End Role="UsuarioPromotor" Type="Self.UsuarioPromotor" Multiplicity="*" />
+  <Association Name="usuariopromotor_usuariopadrao_fk">
+    <End Role="UsuarioPadrao" Type="Self.UsuarioPadrao" Multiplicity="1" />
+    <End Role="UsuarioPromotor" Type="Self.UsuarioPromotor" Multiplicity="0..1" />
     <ReferentialConstraint>
-      <Principal Role="Usuario">
-        <PropertyRef Name="Codigo" />
+      <Principal Role="UsuarioPadrao">
+        <PropertyRef Name="CodUsuario" />
+        <PropertyRef Name="CPF" />
       </Principal>
       <Dependent Role="UsuarioPromotor">
         <PropertyRef Name="CodUsuario" />
+        <PropertyRef Name="CPF" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -375,8 +377,8 @@
       <End Role="Usuario" EntitySet="Usuario" />
       <End Role="UsuarioPadrao" EntitySet="UsuarioPadrao" />
     </AssociationSet>
-    <AssociationSet Name="usuariopromotor_usuario_fk" Association="Self.usuariopromotor_usuario_fk">
-      <End Role="Usuario" EntitySet="Usuario" />
+    <AssociationSet Name="usuariopromotor_usuariopadrao_fk" Association="Self.usuariopromotor_usuariopadrao_fk">
+      <End Role="UsuarioPadrao" EntitySet="UsuarioPadrao" />
       <End Role="UsuarioPromotor" EntitySet="UsuarioPromotor" />
     </AssociationSet>
   </EntityContainer>

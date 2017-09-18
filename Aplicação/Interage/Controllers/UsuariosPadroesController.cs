@@ -1,5 +1,7 @@
 ﻿using Interage.DTO;
+using Interage.Exceptions;
 using Interage.Models;
+using Interage.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,12 +14,11 @@ namespace Interage.Controllers
 {
     public class UsuariosPadroesController : ApiController
     {
-        Contexto db = new Contexto();
-        // GET: api/UsuarioPadrao
+        UsuariosPadroesService userService = new UsuariosPadroesService();
+
         public IEnumerable<UsuarioPadraoDTO> Get()
         {
-            return db.UsuarioPadrao.ToList()
-                .Select(x => new UsuarioPadraoDTO(x));
+            return userService.Get();
         }
 
         [HttpGet]
@@ -25,9 +26,14 @@ namespace Interage.Controllers
         [ResponseType(typeof(UsuarioPadraoDTO))]
         public IHttpActionResult Get(int codUsuario, string cpf)
         {
-            UsuarioPadrao user = db.UsuarioPadrao.Find(codUsuario, cpf);
-            if (user == null) return NotFound();
-            return Ok(new UsuarioPadraoDTO(user));
+            UsuarioPadraoDTO user = null;
+            try { 
+                user = userService.Get(codUsuario, cpf);
+            } catch (NaoEncontradoException)
+            {
+                return NotFound();
+            }
+            return Ok(user);
         }
 
         [ResponseType(typeof(UsuarioPadraoDTO))]
@@ -37,26 +43,55 @@ namespace Interage.Controllers
             {
                 return BadRequest(ModelState);
             }
-            
-            db.Usuario.Add(usuario.GetUsuario());
 
-            return Ok();
+            try { 
+                usuario = userService.Post(usuario);
+            } catch (ConflitoException)
+            {
+                return Conflict();
+            }
+
+            return Ok(usuario);
             
         }
 
-        // PUT: api/UsuarioPadrao/5
+        [ResponseType(typeof(void))]
+        [Route("api/UsuariosPadroes/{codUsuario}/{cpf}")]
         public IHttpActionResult Put(int codUsuario, string cpf, UsuarioPadraoDTO usuario)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            try
+            {
+                userService.Put(codUsuario, cpf, usuario);
+            }
+            catch (ParametrosInvalidosException)
+            {
+                return BadRequest();
+            } catch (NaoEncontradoException)
+            {
+                return NotFound();
+            }
+            return Ok();
+
         }
 
-        // DELETE: api/UsuarioPadrao/5
+        [ResponseType(typeof(UsuarioPadraoDTO))]
+        [Route("api/UsuariosPadroes/{codUsuario}/{cpf}")]
         public IHttpActionResult Delete(int codUsuario, string cpf)
         {
-        }
+            UsuarioPadraoDTO u = null;
+            try { 
+                u = userService.Delete(codUsuario, cpf);
+            } catch (NaoEncontradoException)
+            {
+                return NotFound();
+            }
+            return Ok(u);
 
-        private bool UsuarioPadraoExists(UsuarioPadrao user)
-        {
-            return db.UsuarioPadrao.Count(x => x.CodUsuario == user.CodUsuario && x.CPF == user.CPF) > 0;
         }
     }
 }

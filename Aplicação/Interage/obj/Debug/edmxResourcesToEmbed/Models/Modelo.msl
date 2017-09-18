@@ -59,7 +59,7 @@
     <EntitySetMapping Name="Usuario">
       <EntityTypeMapping TypeName="InterageModel.Usuario">
         <MappingFragment StoreEntitySet="Usuario">
-          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="CodUsuario" ColumnName="Codigo" />
           <ScalarProperty Name="Nome" ColumnName="Nome" />
           <ScalarProperty Name="Senha" ColumnName="Senha" />
           <ScalarProperty Name="Email" ColumnName="Email" />

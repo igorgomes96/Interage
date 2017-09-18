@@ -138,6 +138,9 @@
     <Compile Include="DTO\UsuarioExpositorDTO.cs" />
     <Compile Include="DTO\UsuarioPadraoDTO.cs" />
     <Compile Include="DTO\UsuarioPromotorDTO.cs" />
+    <Compile Include="Exceptions\ConflitoException.cs" />
+    <Compile Include="Exceptions\NaoEncontradoException.cs" />
+    <Compile Include="Exceptions\ParametrosInvalidosException.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -187,6 +190,7 @@
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\UsuariosPadroesService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
