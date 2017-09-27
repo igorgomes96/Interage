@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="30bebc5c4077475eb4614bce272ce193" Name="Diagram1" ZoomLevel="95">
+        <EntityTypeShape EntityType="InterageModel.AreaInteresse" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="InterageModel.Atividade" Width="1.5" PointX="7.25" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="InterageModel.Evento" Width="1.5" PointX="5.125" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="InterageModel.Feedback" Width="1.5" PointX="3" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="InterageModel.SalaDiscussao" Width="1.5" PointX="9.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="InterageModel.Usuario" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="InterageModel.UsuarioExpectador" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="InterageModel.UsuarioExpositor" Width="1.5" PointX="9.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="InterageModel.UsuarioPadrao" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="InterageModel.UsuarioPromotor" Width="1.5" PointX="1.875" PointY="9.75" IsExpanded="true" />
+        <AssociationConnector Association="InterageModel.evento_areainteress_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="InterageModel.atividade_evento_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="InterageModel.saladiscussao_atividade_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="InterageModel.evento_usuariopromotor_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="InterageModel.feedback_evento_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="InterageModel.feedback_usuario_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="InterageModel.saladiscussao_usuarioexpectador_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="InterageModel.usuariopadrao_usuario_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="InterageModel.usuarioexpectador_usuariopadrao_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="InterageModel.usuarioexpositor_usuariopadrao_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="InterageModel.ExpositorAtividade" ManuallyRouted="false" />
+        <AssociationConnector Association="InterageModel.UsuarioInteresse" ManuallyRouted="false" />
+        <AssociationConnector Association="InterageModel.usuariopromotor_usuariopadrao_fk" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
