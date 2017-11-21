@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="InterageModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AreaInteresse">
+    <Key>
+      <PropertyRef Name="Codigo" />
+    </Key>
+    <Property Name="Codigo" Type="int" Nullable="false" />
+    <Property Name="Interesse" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Atividade">
+    <Key>
+      <PropertyRef Name="Codigo" />
+    </Key>
+    <Property Name="Codigo" Type="int" Nullable="false" />
+    <Property Name="CodEvento" Type="int" Nullable="false" />
+    <Property Name="DescricaoAtividade" Type="varchar" MaxLength="255" />
+    <Property Name="HorarioAtividade" Type="datetime" Nullable="false" />
+    <Property Name="Endereco" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EnderecoEvento">
+    <Key>
+      <PropertyRef Name="CodigoEvento" />
+    </Key>
+    <Property Name="Rua" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Complemento" Type="varchar" MaxLength="120" />
+    <Property Name="Bairro" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="Cidade" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="UF" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="CEP" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="CodigoEvento" Type="int" Nullable="false" />
+    <Property Name="Numero" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EnderecoUsuario">
+    <Key>
+      <PropertyRef Name="EmailUsuario" />
+    </Key>
+    <Property Name="EmailUsuario" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Rua" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Complemento" Type="varchar" MaxLength="120" />
+    <Property Name="Bairro" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="Cidade" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="UF" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="CEP" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="Numero" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Evento">
+    <Key>
+      <PropertyRef Name="Codigo" />
+    </Key>
+    <Property Name="Codigo" Type="int" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="45" />
+    <Property Name="CodAreaInteresse" Type="int" Nullable="false" />
+    <Property Name="DataInicio" Type="datetime" Nullable="false" />
+    <Property Name="DataFim" Type="datetime" Nullable="false" />
+    <Property Name="EmailUsuarioPromotor" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ExpositorAtividade">
+    <Key>
+      <PropertyRef Name="CodAtividade" />
+      <PropertyRef Name="EmailUsuarioExpositor" />
+    </Key>
+    <Property Name="CodAtividade" Type="int" Nullable="false" />
+    <Property Name="EmailUsuarioExpositor" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Feedback">
+    <Key>
+      <PropertyRef Name="Codigo" />
+    </Key>
+    <Property Name="CodEvento" Type="int" Nullable="false" />
+    <Property Name="TipoFeedback" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Feedback" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="EmailUsuario" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Perfil">
+    <Key>
+      <PropertyRef Name="Codigo" />
+    </Key>
+    <Property Name="Codigo" Type="int" Nullable="false" />
+    <Property Name="NomePerfil" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SalaDiscussao">
+    <Key>
+      <PropertyRef Name="Codigo" />
+    </Key>
+    <Property Name="Codigo" Type="int" Nullable="false" />
+    <Property Name="CodAtividade" Type="int" Nullable="false" />
+    <Property Name="Fechada" Type="bit" />
+    <Property Name="EmailUsuarioExpectador" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="Email" />
+    </Key>
+    <Property Name="Nome" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CPF" Type="char" MaxLength="11" Nullable="false" />
+    <Property Name="CodigoPerfil" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UsuarioInteresse">
+    <Key>
+      <PropertyRef Name="CodInteresse" />
+      <PropertyRef Name="EmailUsuario" />
+    </Key>
+    <Property Name="CodInteresse" Type="int" Nullable="false" />
+    <Property Name="EmailUsuario" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="atividade_evento_fk">
+    <End Role="Evento" Type="Self.Evento" Multiplicity="1" />
+    <End Role="Atividade" Type="Self.Atividade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Evento">
+        <PropertyRef Name="Codigo" />
+      </Principal>
+      <Dependent Role="Atividade">
+        <PropertyRef Name="CodEvento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="enderecoevento_evento_fk">
+    <End Role="Evento" Type="Self.Evento" Multiplicity="1" />
+    <End Role="EnderecoEvento" Type="Self.EnderecoEvento" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Evento">
+        <PropertyRef Name="Codigo" />
+      </Principal>
+      <Dependent Role="EnderecoEvento">
+        <PropertyRef Name="CodigoEvento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="enderecousuario_usuario_fk">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="EnderecoUsuario" Type="Self.EnderecoUsuario" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Email" />
+      </Principal>
+      <Dependent Role="EnderecoUsuario">
+        <PropertyRef Name="EmailUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="evento_areainteress_fk">
+    <End Role="AreaInteresse" Type="Self.AreaInteresse" Multiplicity="1" />
+    <End Role="Evento" Type="Self.Evento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AreaInteresse">
+        <PropertyRef Name="Codigo" />
+      </Principal>
+      <Dependent Role="Evento">
+        <PropertyRef Name="CodAreaInteresse" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="evento_usuario_fk">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Evento" Type="Self.Evento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Email" />
+      </Principal>
+      <Dependent Role="Evento">
+        <PropertyRef Name="EmailUsuarioPromotor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="expositoratividade_atividade_fk">
+    <End Role="Atividade" Type="Self.Atividade" Multiplicity="1" />
+    <End Role="ExpositorAtividade" Type="Self.ExpositorAtividade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Atividade">
+        <PropertyRef Name="Codigo" />
+      </Principal>
+      <Dependent Role="ExpositorAtividade">
+        <PropertyRef Name="CodAtividade" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="expositoratividade_usuario_fk">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="ExpositorAtividade" Type="Self.ExpositorAtividade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Email" />
+      </Principal>
+      <Dependent Role="ExpositorAtividade">
+        <PropertyRef Name="EmailUsuarioExpositor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="feedback_evento_fk">
+    <End Role="Evento" Type="Self.Evento" Multiplicity="1" />
+    <End Role="Feedback" Type="Self.Feedback" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Evento">
+        <PropertyRef Name="Codigo" />
+      </Principal>
+      <Dependent Role="Feedback">
+        <PropertyRef Name="CodEvento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="feedback_usuario_fk">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Feedback" Type="Self.Feedback" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Email" />
+      </Principal>
+      <Dependent Role="Feedback">
+        <PropertyRef Name="EmailUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="saladiscussao_atividade_fk">
+    <End Role="Atividade" Type="Self.Atividade" Multiplicity="1" />
+    <End Role="SalaDiscussao" Type="Self.SalaDiscussao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Atividade">
+        <PropertyRef Name="Codigo" />
+      </Principal>
+      <Dependent Role="SalaDiscussao">
+        <PropertyRef Name="CodAtividade" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="saladiscussao_usuario_fk">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="SalaDiscussao" Type="Self.SalaDiscussao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Email" />
+      </Principal>
+      <Dependent Role="SalaDiscussao">
+        <PropertyRef Name="EmailUsuarioExpectador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="usuario_interesse_usuario_fk">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="UsuarioInteresse" Type="Self.UsuarioInteresse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Email" />
+      </Principal>
+      <Dependent Role="UsuarioInteresse">
+        <PropertyRef Name="EmailUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="usuario_perfil_fk">
+    <End Role="Perfil" Type="Self.Perfil" Multiplicity="1" />
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Perfil">
+        <PropertyRef Name="Codigo" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="CodigoPerfil" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="usuariointeresse_areainteresse_fk">
+    <End Role="AreaInteresse" Type="Self.AreaInteresse" Multiplicity="1" />
+    <End Role="UsuarioInteresse" Type="Self.UsuarioInteresse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AreaInteresse">
+        <PropertyRef Name="Codigo" />
+      </Principal>
+      <Dependent Role="UsuarioInteresse">
+        <PropertyRef Name="CodInteresse" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="InterageModelStoreContainer">
+    <EntitySet Name="AreaInteresse" EntityType="Self.AreaInteresse" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Atividade" EntityType="Self.Atividade" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EnderecoEvento" EntityType="Self.EnderecoEvento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EnderecoUsuario" EntityType="Self.EnderecoUsuario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Evento" EntityType="Self.Evento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ExpositorAtividade" EntityType="Self.ExpositorAtividade" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Feedback" EntityType="Self.Feedback" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Perfil" EntityType="Self.Perfil" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SalaDiscussao" EntityType="Self.SalaDiscussao" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UsuarioInteresse" EntityType="Self.UsuarioInteresse" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="atividade_evento_fk" Association="Self.atividade_evento_fk">
+      <End Role="Evento" EntitySet="Evento" />
+      <End Role="Atividade" EntitySet="Atividade" />
+    </AssociationSet>
+    <AssociationSet Name="enderecoevento_evento_fk" Association="Self.enderecoevento_evento_fk">
+      <End Role="Evento" EntitySet="Evento" />
+      <End Role="EnderecoEvento" EntitySet="EnderecoEvento" />
+    </AssociationSet>
+    <AssociationSet Name="enderecousuario_usuario_fk" Association="Self.enderecousuario_usuario_fk">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="EnderecoUsuario" EntitySet="EnderecoUsuario" />
+    </AssociationSet>
+    <AssociationSet Name="evento_areainteress_fk" Association="Self.evento_areainteress_fk">
+      <End Role="AreaInteresse" EntitySet="AreaInteresse" />
+      <End Role="Evento" EntitySet="Evento" />
+    </AssociationSet>
+    <AssociationSet Name="evento_usuario_fk" Association="Self.evento_usuario_fk">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Evento" EntitySet="Evento" />
+    </AssociationSet>
+    <AssociationSet Name="expositoratividade_atividade_fk" Association="Self.expositoratividade_atividade_fk">
+      <End Role="Atividade" EntitySet="Atividade" />
+      <End Role="ExpositorAtividade" EntitySet="ExpositorAtividade" />
+    </AssociationSet>
+    <AssociationSet Name="expositoratividade_usuario_fk" Association="Self.expositoratividade_usuario_fk">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="ExpositorAtividade" EntitySet="ExpositorAtividade" />
+    </AssociationSet>
+    <AssociationSet Name="feedback_evento_fk" Association="Self.feedback_evento_fk">
+      <End Role="Evento" EntitySet="Evento" />
+      <End Role="Feedback" EntitySet="Feedback" />
+    </AssociationSet>
+    <AssociationSet Name="feedback_usuario_fk" Association="Self.feedback_usuario_fk">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Feedback" EntitySet="Feedback" />
+    </AssociationSet>
+    <AssociationSet Name="saladiscussao_atividade_fk" Association="Self.saladiscussao_atividade_fk">
+      <End Role="Atividade" EntitySet="Atividade" />
+      <End Role="SalaDiscussao" EntitySet="SalaDiscussao" />
+    </AssociationSet>
+    <AssociationSet Name="saladiscussao_usuario_fk" Association="Self.saladiscussao_usuario_fk">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="SalaDiscussao" EntitySet="SalaDiscussao" />
+    </AssociationSet>
+    <AssociationSet Name="usuario_interesse_usuario_fk" Association="Self.usuario_interesse_usuario_fk">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="UsuarioInteresse" EntitySet="UsuarioInteresse" />
+    </AssociationSet>
+    <AssociationSet Name="usuario_perfil_fk" Association="Self.usuario_perfil_fk">
+      <End Role="Perfil" EntitySet="Perfil" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="usuariointeresse_areainteresse_fk" Association="Self.usuariointeresse_areainteresse_fk">
+      <End Role="AreaInteresse" EntitySet="AreaInteresse" />
+      <End Role="UsuarioInteresse" EntitySet="UsuarioInteresse" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

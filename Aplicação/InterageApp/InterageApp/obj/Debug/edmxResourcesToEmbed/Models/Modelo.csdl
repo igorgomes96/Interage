@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="InterageModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AreaInteresse">
+    <Key>
+      <PropertyRef Name="Codigo" />
+    </Key>
+    <Property Name="Codigo" Type="Int32" Nullable="false" />
+    <Property Name="Interesse" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Usuarios" Relationship="Self.UsuarioInteresse" FromRole="AreaInteresse" ToRole="Usuario" />
+    <NavigationProperty Name="Evento" Relationship="InterageModel.evento_areainteress_fk" FromRole="AreaInteresse" ToRole="Evento" />
+  </EntityType>
+  <EntityType Name="Atividade">
+    <Key>
+      <PropertyRef Name="Codigo" />
+    </Key>
+    <Property Name="Codigo" Type="Int32" Nullable="false" />
+    <Property Name="CodEvento" Type="Int32" Nullable="false" />
+    <Property Name="DescricaoAtividade" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="HorarioAtividade" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Endereco" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="SalasDiscussoes" Relationship="Self.saladiscussao_atividade_fk" FromRole="Atividade" ToRole="SalaDiscussao" />
+    <NavigationProperty Name="Usuarios" Relationship="Self.ExpositorAtividade" FromRole="Atividade" ToRole="Usuario" />
+    <NavigationProperty Name="Evento" Relationship="InterageModel.atividade_evento_fk" FromRole="Atividade" ToRole="Evento" />
+  </EntityType>
+  <EntityType Name="EnderecoUsuario">
+    <Key>
+      <PropertyRef Name="EmailUsuario" />
+    </Key>
+    <Property Name="EmailUsuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Rua" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Complemento" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="Bairro" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Cidade" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UF" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="CEP" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Usuario" Relationship="Self.enderecousuario_usuario_fk" FromRole="EnderecoUsuario" ToRole="Usuario" />
+    <Property Name="Numero" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Feedback">
+    <Key>
+      <PropertyRef Name="Codigo" />
+    </Key>
+    <Property Name="CodEvento" Type="Int32" Nullable="false" />
+    <Property Name="TipoFeedback" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FeedbackMensagem" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EmailUsuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Usuario" Relationship="Self.feedback_usuario_fk" FromRole="Feedback" ToRole="Usuario" />
+    <NavigationProperty Name="Evento" Relationship="InterageModel.feedback_evento_fk" FromRole="Feedback" ToRole="Evento" />
+  </EntityType>
+  <EntityType Name="Perfil">
+    <Key>
+      <PropertyRef Name="Codigo" />
+    </Key>
+    <Property Name="Codigo" Type="Int32" Nullable="false" />
+    <Property Name="NomePerfil" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Usuarios" Relationship="Self.usuario_perfil_fk" FromRole="Perfil" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="SalaDiscussao">
+    <Key>
+      <PropertyRef Name="Codigo" />
+    </Key>
+    <Property Name="Codigo" Type="Int32" Nullable="false" />
+    <Property Name="CodAtividade" Type="Int32" Nullable="false" />
+    <Property Name="Fechada" Type="Boolean" />
+    <Property Name="EmailUsuarioExpectador" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Atividade" Relationship="Self.saladiscussao_atividade_fk" FromRole="SalaDiscussao" ToRole="Atividade" />
+    <NavigationProperty Name="Usuario" Relationship="Self.saladiscussao_usuario_fk" FromRole="SalaDiscussao" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="Email" />
+    </Key>
+    <Property Name="Nome" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CPF" Type="String" MaxLength="11" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="CodigoPerfil" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="EnderecoUsuario" Relationship="Self.enderecousuario_usuario_fk" FromRole="Usuario" ToRole="EnderecoUsuario" />
+    <NavigationProperty Name="Feedbacks" Relationship="Self.feedback_usuario_fk" FromRole="Usuario" ToRole="Feedback" />
+    <NavigationProperty Name="Perfil" Relationship="Self.usuario_perfil_fk" FromRole="Usuario" ToRole="Perfil" />
+    <NavigationProperty Name="SalasDiscussoes" Relationship="Self.saladiscussao_usuario_fk" FromRole="Usuario" ToRole="SalaDiscussao" />
+    <NavigationProperty Name="Atividades" Relationship="Self.ExpositorAtividade" FromRole="Usuario" ToRole="Atividade" />
+    <NavigationProperty Name="AreasInteresse" Relationship="Self.UsuarioInteresse" FromRole="Usuario" ToRole="AreaInteresse" />
+    <NavigationProperty Name="Evento" Relationship="InterageModel.evento_usuario_fk" FromRole="Usuario" ToRole="Evento" />
+  </EntityType>
+  <Association Name="saladiscussao_atividade_fk">
+    <End Role="Atividade" Type="Self.Atividade" Multiplicity="1" />
+    <End Role="SalaDiscussao" Type="Self.SalaDiscussao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Atividade">
+        <PropertyRef Name="Codigo" />
+      </Principal>
+      <Dependent Role="SalaDiscussao">
+        <PropertyRef Name="CodAtividade" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="enderecousuario_usuario_fk">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="EnderecoUsuario" Type="Self.EnderecoUsuario" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Email" />
+      </Principal>
+      <Dependent Role="EnderecoUsuario">
+        <PropertyRef Name="EmailUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="feedback_usuario_fk">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Feedback" Type="Self.Feedback" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Email" />
+      </Principal>
+      <Dependent Role="Feedback">
+        <PropertyRef Name="EmailUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="usuario_perfil_fk">
+    <End Role="Perfil" Type="Self.Perfil" Multiplicity="1" />
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Perfil">
+        <PropertyRef Name="Codigo" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="CodigoPerfil" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="saladiscussao_usuario_fk">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="SalaDiscussao" Type="Self.SalaDiscussao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Email" />
+      </Principal>
+      <Dependent Role="SalaDiscussao">
+        <PropertyRef Name="EmailUsuarioExpectador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ExpositorAtividade">
+    <End Role="Atividade" Type="Self.Atividade" Multiplicity="*" />
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+  </Association>
+  <Association Name="UsuarioInteresse">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+    <End Role="AreaInteresse" Type="Self.AreaInteresse" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="Contexto" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AreaInteresse" EntityType="Self.AreaInteresse" />
+    <EntitySet Name="Atividade" EntityType="Self.Atividade" />
+    <EntitySet Name="EnderecoUsuario" EntityType="Self.EnderecoUsuario" />
+    <EntitySet Name="Feedback" EntityType="Self.Feedback" />
+    <EntitySet Name="Perfil" EntityType="Self.Perfil" />
+    <EntitySet Name="SalaDiscussao" EntityType="Self.SalaDiscussao" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" />
+    <AssociationSet Name="saladiscussao_atividade_fk" Association="Self.saladiscussao_atividade_fk">
+      <End Role="Atividade" EntitySet="Atividade" />
+      <End Role="SalaDiscussao" EntitySet="SalaDiscussao" />
+    </AssociationSet>
+    <AssociationSet Name="enderecousuario_usuario_fk" Association="Self.enderecousuario_usuario_fk">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="EnderecoUsuario" EntitySet="EnderecoUsuario" />
+    </AssociationSet>
+    <AssociationSet Name="feedback_usuario_fk" Association="Self.feedback_usuario_fk">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Feedback" EntitySet="Feedback" />
+    </AssociationSet>
+    <AssociationSet Name="usuario_perfil_fk" Association="Self.usuario_perfil_fk">
+      <End Role="Perfil" EntitySet="Perfil" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="saladiscussao_usuario_fk" Association="Self.saladiscussao_usuario_fk">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="SalaDiscussao" EntitySet="SalaDiscussao" />
+    </AssociationSet>
+    <AssociationSet Name="ExpositorAtividade" Association="Self.ExpositorAtividade">
+      <End Role="Atividade" EntitySet="Atividade" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="UsuarioInteresse" Association="Self.UsuarioInteresse">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="AreaInteresse" EntitySet="AreaInteresse" />
+    </AssociationSet>
+    <EntitySet Name="EnderecoEvento" EntityType="InterageModel.EnderecoEvento" />
+    <EntitySet Name="Evento" EntityType="InterageModel.Evento" />
+    <AssociationSet Name="evento_areainteress_fk" Association="InterageModel.evento_areainteress_fk">
+      <End Role="AreaInteresse" EntitySet="AreaInteresse" />
+      <End Role="Evento" EntitySet="Evento" />
+    </AssociationSet>
+    <AssociationSet Name="atividade_evento_fk" Association="InterageModel.atividade_evento_fk">
+      <End Role="Evento" EntitySet="Evento" />
+      <End Role="Atividade" EntitySet="Atividade" />
+    </AssociationSet>
+    <AssociationSet Name="enderecoevento_evento_fk" Association="InterageModel.enderecoevento_evento_fk">
+      <End Role="Evento" EntitySet="Evento" />
+      <End Role="EnderecoEvento" EntitySet="EnderecoEvento" />
+    </AssociationSet>
+    <AssociationSet Name="evento_usuario_fk" Association="InterageModel.evento_usuario_fk">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Evento" EntitySet="Evento" />
+    </AssociationSet>
+    <AssociationSet Name="feedback_evento_fk" Association="InterageModel.feedback_evento_fk">
+      <End Role="Evento" EntitySet="Evento" />
+      <End Role="Feedback" EntitySet="Feedback" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="EnderecoEvento">
+    <Key>
+      <PropertyRef Name="CodigoEvento" />
+    </Key>
+    <Property Name="Rua" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Complemento" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="Bairro" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="Cidade" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="UF" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="CEP" Type="String" Nullable="false" MaxLength="8" FixedLength="true" Unicode="false" />
+    <Property Name="CodigoEvento" Type="Int32" Nullable="false" />
+    <Property Name="Numero" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Evento" Relationship="InterageModel.enderecoevento_evento_fk" FromRole="EnderecoEvento" ToRole="Evento" />
+  </EntityType>
+  <EntityType Name="Evento">
+    <Key>
+      <PropertyRef Name="Codigo" />
+    </Key>
+    <Property Name="Codigo" Type="Int32" Nullable="false" />
+    <Property Name="Nome" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="CodAreaInteresse" Type="Int32" Nullable="false" />
+    <Property Name="DataInicio" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DataFim" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EmailUsuarioPromotor" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="AreaInteresse" Relationship="InterageModel.evento_areainteress_fk" FromRole="Evento" ToRole="AreaInteresse" />
+    <NavigationProperty Name="Atividade" Relationship="InterageModel.atividade_evento_fk" FromRole="Evento" ToRole="Atividade" />
+    <NavigationProperty Name="EnderecoEvento" Relationship="InterageModel.enderecoevento_evento_fk" FromRole="Evento" ToRole="EnderecoEvento" />
+    <NavigationProperty Name="Usuario" Relationship="InterageModel.evento_usuario_fk" FromRole="Evento" ToRole="Usuario" />
+    <NavigationProperty Name="Feedback" Relationship="InterageModel.feedback_evento_fk" FromRole="Evento" ToRole="Feedback" />
+  </EntityType>
+  <Association Name="evento_areainteress_fk">
+    <End Type="InterageModel.AreaInteresse" Role="AreaInteresse" Multiplicity="1" />
+    <End Type="InterageModel.Evento" Role="Evento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AreaInteresse">
+        <PropertyRef Name="Codigo" />
+      </Principal>
+      <Dependent Role="Evento">
+        <PropertyRef Name="CodAreaInteresse" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="atividade_evento_fk">
+    <End Type="InterageModel.Evento" Role="Evento" Multiplicity="1" />
+    <End Type="InterageModel.Atividade" Role="Atividade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Evento">
+        <PropertyRef Name="Codigo" />
+      </Principal>
+      <Dependent Role="Atividade">
+        <PropertyRef Name="CodEvento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="enderecoevento_evento_fk">
+    <End Type="InterageModel.Evento" Role="Evento" Multiplicity="1" />
+    <End Type="InterageModel.EnderecoEvento" Role="EnderecoEvento" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Evento">
+        <PropertyRef Name="Codigo" />
+      </Principal>
+      <Dependent Role="EnderecoEvento">
+        <PropertyRef Name="CodigoEvento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="evento_usuario_fk">
+    <End Type="InterageModel.Usuario" Role="Usuario" Multiplicity="1" />
+    <End Type="InterageModel.Evento" Role="Evento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Email" />
+      </Principal>
+      <Dependent Role="Evento">
+        <PropertyRef Name="EmailUsuarioPromotor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="feedback_evento_fk">
+    <End Type="InterageModel.Evento" Role="Evento" Multiplicity="1" />
+    <End Type="InterageModel.Feedback" Role="Feedback" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Evento">
+        <PropertyRef Name="Codigo" />
+      </Principal>
+      <Dependent Role="Feedback">
+        <PropertyRef Name="CodEvento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

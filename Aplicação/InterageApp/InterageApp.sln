@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2005
+VisualStudioVersion = 15.0.27004.2008
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterageApp", "InterageApp\InterageApp.csproj", "{4200CAE6-C2CD-4DBE-BCF9-3DAE40C2F74A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterageApp", "InterageApp\InterageApp.csproj", "{69F7D5B2-FE0D-4951-9AA9-686A681B15E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4200CAE6-C2CD-4DBE-BCF9-3DAE40C2F74A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4200CAE6-C2CD-4DBE-BCF9-3DAE40C2F74A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4200CAE6-C2CD-4DBE-BCF9-3DAE40C2F74A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4200CAE6-C2CD-4DBE-BCF9-3DAE40C2F74A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69F7D5B2-FE0D-4951-9AA9-686A681B15E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69F7D5B2-FE0D-4951-9AA9-686A681B15E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69F7D5B2-FE0D-4951-9AA9-686A681B15E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69F7D5B2-FE0D-4951-9AA9-686A681B15E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {C8F1AE25-00AA-4608-BD75-DD92BF2CC9D4}
+		SolutionGuid = {AE7A9F83-EFEB-4694-9A85-A552DFB44415}
 	EndGlobalSection
 EndGlobal

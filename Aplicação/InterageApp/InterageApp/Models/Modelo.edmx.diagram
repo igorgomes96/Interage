@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c10b170b448e4d0b9aa3b5d61859e2cb" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="InterageModel.AreaInteresse" Width="1.5" PointX="5.25" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="InterageModel.Atividade" Width="1.5" PointX="9.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="InterageModel.EnderecoUsuario" Width="1.5" PointX="5.25" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InterageModel.Feedback" Width="1.5" PointX="9.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="InterageModel.Perfil" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="InterageModel.SalaDiscussao" Width="1.5" PointX="12" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="InterageModel.Usuario" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
+        <AssociationConnector Association="InterageModel.saladiscussao_atividade_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="InterageModel.enderecousuario_usuario_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="InterageModel.feedback_usuario_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="InterageModel.usuario_perfil_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="InterageModel.saladiscussao_usuario_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="InterageModel.ExpositorAtividade" ManuallyRouted="false" />
+        <AssociationConnector Association="InterageModel.UsuarioInteresse" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="InterageModel.EnderecoEvento" Width="1.5" PointX="9.75" PointY="11" />
+        <EntityTypeShape EntityType="InterageModel.Evento" Width="1.5" PointX="7.5" PointY="6.75" />
+        <AssociationConnector Association="InterageModel.evento_areainteress_fk" />
+        <AssociationConnector Association="InterageModel.atividade_evento_fk" />
+        <AssociationConnector Association="InterageModel.enderecoevento_evento_fk" />
+        <AssociationConnector Association="InterageModel.evento_usuario_fk" />
+        <AssociationConnector Association="InterageModel.feedback_evento_fk" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
