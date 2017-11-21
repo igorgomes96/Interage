@@ -101,6 +101,7 @@
           <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="CPF" Type="char" MaxLength="11" Nullable="false" />
           <Property Name="CodigoPerfil" Type="int" Nullable="false" />
+          <Property Name="Senha" Type="varchar" MaxLength="180" Nullable="false" />
         </EntityType>
         <EntityType Name="UsuarioInteresse">
           <Key>
@@ -433,6 +434,7 @@
           <NavigationProperty Name="Atividades" Relationship="Self.ExpositorAtividade" FromRole="Usuario" ToRole="Atividade" />
           <NavigationProperty Name="AreasInteresse" Relationship="Self.UsuarioInteresse" FromRole="Usuario" ToRole="AreaInteresse" />
           <NavigationProperty Name="Evento" Relationship="InterageModel.evento_usuario_fk" FromRole="Usuario" ToRole="Evento" />
+          <Property Name="Senha" Type="String" Nullable="false" MaxLength="180" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="saladiscussao_atividade_fk">
           <End Role="Atividade" Type="Self.Atividade" Multiplicity="1" />
@@ -722,6 +724,7 @@
           <EntitySetMapping Name="Usuario">
             <EntityTypeMapping TypeName="InterageModel.Usuario">
               <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="Senha" ColumnName="Senha" />
                 <ScalarProperty Name="Nome" ColumnName="Nome" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="CPF" ColumnName="CPF" />

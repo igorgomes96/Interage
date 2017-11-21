@@ -28,6 +28,7 @@ namespace InterageApp.Models
         public string Email { get; set; }
         public string CPF { get; set; }
         public int CodigoPerfil { get; set; }
+        public string Senha { get; set; }
     
         public virtual EnderecoUsuario EnderecoUsuario { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

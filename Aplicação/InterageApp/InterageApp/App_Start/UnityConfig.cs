@@ -23,7 +23,8 @@ namespace InterageApp
             container.RegisterType(typeof(IRepository<,,>), typeof(Repository<,,>));
             container.RegisterType(typeof(IService<,,>), typeof(Service<,,>));
             container.RegisterType<IMapper<Perfil, PerfilDto>, PerfilMapper>();
-            //container.RegisterType<IAuthRepository, AuthRepository>();
+            container.RegisterType<IAuthService, AuthService>();
+            container.RegisterType<ICryptoService, CryptoService>();
             
 
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
