@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\Models\Modelo.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\Models\Modelo.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

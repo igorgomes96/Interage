@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using InterageApp.Exceptions;
 
 namespace InterageApp.Services.Interfaces
 {
@@ -28,6 +29,7 @@ namespace InterageApp.Services.Interfaces
         /// </summary>
         /// <param name="evento"></param>
         /// <returns>Evento criado</returns>
+        /// <exception cref="NaoInformadoException">Endereço não informado</exception>
         EventoDto CriarNovo(EventoDto evento);
 
         /// <summary>

@@ -15,14 +15,17 @@ namespace InterageApp.Services.Implementations
         private readonly IGenericRepository<int, Evento, EventoDto> _eventoRepository;
         private readonly IGenericRepository<string, Usuario, UsuarioDto> _usuarioRepository;
         private readonly IGenericRepository<int, Atividade, AtividadeDto> _atividadeRepository;
+        private readonly IGenericRepository<int, Endereco, EnderecoDto> _enderecoRepository;
 
         public EventosService(IGenericRepository<int, Evento, EventoDto> eventoRepository, 
             IGenericRepository<string, Usuario, UsuarioDto> usuarioRepository,
-            IGenericRepository<int, Atividade, AtividadeDto> atividadeRepository)
+            IGenericRepository<int, Atividade, AtividadeDto> atividadeRepository,
+            IGenericRepository<int, Endereco, EnderecoDto> enderecoRepository)
         {
             _eventoRepository = eventoRepository;
             _usuarioRepository = usuarioRepository;
             _atividadeRepository = atividadeRepository;
+            _enderecoRepository = enderecoRepository;
         }
 
         public ICollection<AtividadeDto> Atividades(int id)
@@ -37,6 +40,18 @@ namespace InterageApp.Services.Implementations
 
         public EventoDto CriarNovo(EventoDto evento)
         {
+            UsuarioDto usuario = _usuarioRepository.Find(evento.EmailUsuarioPromotor);
+            if (evento.FlagEnderecoPromotor)
+                evento.CodEndereco = usuario.CodEndereco;
+            else
+            {
+                if (evento.Endereco == null)
+                    throw new NaoInformadoException("Endereço");
+                else
+                {
+                    _enderecoRepository.Save(evento.Endereco);
+                }
+            }
             return _eventoRepository.Save(evento);
         }
 

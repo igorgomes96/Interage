@@ -28,6 +28,7 @@ namespace InterageApp.Mapping.Implementations
             return source == null ? null : new EventoDto { 
                 Codigo = source.Codigo,
                 Nome = source.Nome,
+                Descricao = source.Descricao,
                 CodAreaInteresse = source.CodAreaInteresse,
                 DataInicio = source.DataInicio,
                 DataFim = source.DataFim,
@@ -35,7 +36,7 @@ namespace InterageApp.Mapping.Implementations
                 CodEndereco = source.CodEndereco,
                 AreaInteresse = _interesseMapper.Map(source.AreaInteresse),
                 Endereco = _enderecoMapper.Map(source.Endereco),
-                Usuario = _usuarioMapper.Map(source.Usuario)
+                Promotor = _usuarioMapper.Map(source.Promotor)
             };
         }
 
@@ -45,6 +46,7 @@ namespace InterageApp.Mapping.Implementations
             {
                 Codigo = destination.Codigo,
                 Nome = destination.Nome,
+                Descricao = destination.Descricao,
                 CodAreaInteresse = destination.CodAreaInteresse,
                 DataInicio = destination.DataInicio,
                 DataFim = destination.DataFim,

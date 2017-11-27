@@ -14,10 +14,6 @@ namespace InterageApp.DTO
         [StringLength(80, ErrorMessage = "O nome do evento pode ter no máximo 80 caracteres!")]
         public string Nome { get; set; }
 
-        [Required(ErrorMessage = "Uma descrição para o evento precisa ser informado!")]
-        [StringLength(255, ErrorMessage = "A descrição do evento pode ter no máximo 255 caracteres!")]
-        public string Descricao { get; set; }
-
         [Required(ErrorMessage = "A área de interesse do evento precisa ser informada!")]
         public int CodAreaInteresse { get; set; }
 

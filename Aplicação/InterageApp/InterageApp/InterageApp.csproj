@@ -173,28 +173,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Models\Modelo.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Modelo.edmx</DependentUpon>
-      <LastGenOutput>Modelo.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\Modelo.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Modelo.edmx</DependentUpon>
-      <LastGenOutput>Modelo.cs</LastGenOutput>
-    </Content>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AreasInteresseController.cs" />
     <Compile Include="Controllers\AtividadesController.cs" />
     <Compile Include="Controllers\EventosController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="DTO\AreaInteresseDto.cs" />
     <Compile Include="DTO\AtividadeDto.cs" />
-    <Compile Include="DTO\CredenciaisDto.cs" />
     <Compile Include="DTO\EnderecoDto.cs" />
     <Compile Include="DTO\EventoDto.cs" />
     <Compile Include="DTO\FeedbackDto.cs" />
@@ -203,7 +193,9 @@
     <Compile Include="DTO\UsuarioDto.cs" />
     <Compile Include="Exceptions\ConflitoException.cs" />
     <Compile Include="Exceptions\NaoEncontradoException.cs" />
+    <Compile Include="Exceptions\NaoInformadoException.cs" />
     <Compile Include="Mapping\Implementations\AreaInteresseMapper.cs" />
+    <Compile Include="Mapping\Implementations\AtividadeMapper.cs" />
     <Compile Include="Mapping\Implementations\EnderecoMapper.cs" />
     <Compile Include="Mapping\Implementations\EventoMapper.cs" />
     <Compile Include="Mapping\Implementations\FeedbackMapper.cs" />
@@ -214,63 +206,37 @@
     <Compile Include="Mapping\Interfaces\ISingleMapper.cs" />
     <Compile Include="Mapping\Implementations\PerfilMapper.cs" />
     <Compile Include="Mapping\Implementations\UsuarioMapper.cs" />
-    <Compile Include="Models\AreaInteresse.cs">
-      <DependentUpon>Modelo.tt</DependentUpon>
+    <Compile Include="Migrations\201711271731394_Initial.cs" />
+    <Compile Include="Migrations\201711271731394_Initial.Designer.cs">
+      <DependentUpon>201711271731394_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Atividade.cs">
-      <DependentUpon>Modelo.tt</DependentUpon>
+    <Compile Include="Migrations\201711271844200_DescricaoEvento_interesse_unq.cs" />
+    <Compile Include="Migrations\201711271844200_DescricaoEvento_interesse_unq.Designer.cs">
+      <DependentUpon>201711271844200_DescricaoEvento_interesse_unq.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Endereco.cs">
-      <DependentUpon>Modelo.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Evento.cs">
-      <DependentUpon>Modelo.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Feedback.cs">
-      <DependentUpon>Modelo.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Modelo.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Modelo.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Modelo.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Modelo.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Modelo.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Modelo.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Perfil.cs">
-      <DependentUpon>Modelo.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\SalaDiscussao.cs">
-      <DependentUpon>Modelo.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Usuario.cs">
-      <DependentUpon>Modelo.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AreaInteresse.cs" />
+    <Compile Include="Models\Atividade.cs" />
+    <Compile Include="Models\Endereco.cs" />
+    <Compile Include="Models\Evento.cs" />
+    <Compile Include="Models\Feedback.cs" />
+    <Compile Include="Models\Modelo.cs" />
+    <Compile Include="Models\Perfil.cs" />
+    <Compile Include="Models\SalaDiscussao.cs" />
+    <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\Implementations\GenericRepository.cs" />
     <Compile Include="Repository\Interfaces\IGenericRepository.cs" />
+    <Compile Include="Services\Implementations\AreasInteresseService.cs" />
     <Compile Include="Services\Implementations\EventosService.cs" />
     <Compile Include="Services\Implementations\UsuariosService.cs" />
+    <Compile Include="Services\Interfaces\IAreasInteresseService.cs" />
     <Compile Include="Services\Interfaces\IAtividadesService.cs" />
     <Compile Include="Services\Interfaces\IEventosService.cs" />
     <Compile Include="Services\Interfaces\IUsuariosService.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="Models\Modelo.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Modelo.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\Modelo.edmx.diagram">
-      <DependentUpon>Modelo.edmx</DependentUpon>
-    </Content>
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -285,6 +251,14 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201711271731394_Initial.resx">
+      <DependentUpon>201711271731394_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711271844200_DescricaoEvento_interesse_unq.resx">
+      <DependentUpon>201711271844200_DescricaoEvento_interesse_unq.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
