@@ -20,7 +20,7 @@ namespace InterageApp.Models
         public string EmailUsuario { get; set; }
         public int Codigo { get; set; }
     
-        public virtual Usuario Usuario { get; set; }
         public virtual Evento Evento { get; set; }
+        public virtual Usuario Usuario { get; set; }
     }
 }

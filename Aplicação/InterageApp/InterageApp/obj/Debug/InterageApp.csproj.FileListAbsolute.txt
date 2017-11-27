@@ -75,3 +75,6 @@ C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\In
 C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\System.Web.Http.Owin.xml
 C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\Microsoft.AspNet.Identity.EntityFramework.dll
 C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\System.Web.Cors.dll
+C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\System.Web.Http.Cors.dll
+C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\System.Web.Http.Cors.xml

@@ -17,16 +17,16 @@ namespace InterageApp.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public AreaInteresse()
         {
+            this.Eventos = new HashSet<Evento>();
             this.Usuarios = new HashSet<Usuario>();
-            this.Evento = new HashSet<Evento>();
         }
     
         public int Codigo { get; set; }
         public string Interesse { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Usuario> Usuarios { get; set; }
+        public virtual ICollection<Evento> Eventos { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Evento> Evento { get; set; }
+        public virtual ICollection<Usuario> Usuarios { get; set; }
     }
 }

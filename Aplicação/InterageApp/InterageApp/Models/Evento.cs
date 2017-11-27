@@ -17,8 +17,8 @@ namespace InterageApp.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Evento()
         {
-            this.Atividade = new HashSet<Atividade>();
-            this.Feedback = new HashSet<Feedback>();
+            this.Atividades = new HashSet<Atividade>();
+            this.Feedbacks = new HashSet<Feedback>();
         }
     
         public int Codigo { get; set; }
@@ -27,13 +27,14 @@ namespace InterageApp.Models
         public System.DateTime DataInicio { get; set; }
         public System.DateTime DataFim { get; set; }
         public string EmailUsuarioPromotor { get; set; }
+        public int CodEndereco { get; set; }
     
         public virtual AreaInteresse AreaInteresse { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Atividade> Atividade { get; set; }
-        public virtual EnderecoEvento EnderecoEvento { get; set; }
-        public virtual Usuario Usuario { get; set; }
+        public virtual ICollection<Atividade> Atividades { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Feedback> Feedback { get; set; }
+        public virtual ICollection<Feedback> Feedbacks { get; set; }
+        public virtual Endereco Endereco { get; set; }
+        public virtual Usuario Usuario { get; set; }
     }
 }

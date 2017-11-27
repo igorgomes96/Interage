@@ -27,12 +27,11 @@ namespace InterageApp.Models
     
         public virtual DbSet<AreaInteresse> AreaInteresse { get; set; }
         public virtual DbSet<Atividade> Atividade { get; set; }
-        public virtual DbSet<EnderecoUsuario> EnderecoUsuario { get; set; }
         public virtual DbSet<Feedback> Feedback { get; set; }
         public virtual DbSet<Perfil> Perfil { get; set; }
         public virtual DbSet<SalaDiscussao> SalaDiscussao { get; set; }
-        public virtual DbSet<Usuario> Usuario { get; set; }
-        public virtual DbSet<EnderecoEvento> EnderecoEvento { get; set; }
         public virtual DbSet<Evento> Evento { get; set; }
+        public virtual DbSet<Endereco> Endereco { get; set; }
+        public virtual DbSet<Usuario> Usuario { get; set; }
     }
 }

@@ -11,6 +11,7 @@ namespace InterageApp.DTO
         public string Email { get; set; }
         public string CPF { get; set; }
         public int CodigoPerfil { get; set; }
+        public int CodEndereco { get; set; }
         public EnderecoDto Endereco { get; set; }
         public PerfilDto Perfil { get; set; }
         public ICollection<AreaInteresseDto> AreasInteresse { get; set; }

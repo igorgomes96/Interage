@@ -17,11 +17,12 @@ namespace InterageApp.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Usuario()
         {
+            this.AtividadesExpostas = new HashSet<Atividade>();
+            this.EventosPromovidos = new HashSet<Evento>();
             this.Feedbacks = new HashSet<Feedback>();
             this.SalasDiscussoes = new HashSet<SalaDiscussao>();
-            this.Atividades = new HashSet<Atividade>();
+            this.AtividadesInscritas = new HashSet<Atividade>();
             this.AreasInteresse = new HashSet<AreaInteresse>();
-            this.Evento = new HashSet<Evento>();
         }
     
         public string Nome { get; set; }
@@ -29,18 +30,21 @@ namespace InterageApp.Models
         public string CPF { get; set; }
         public int CodigoPerfil { get; set; }
         public string Senha { get; set; }
+        public int CodEndereco { get; set; }
     
-        public virtual EnderecoUsuario EnderecoUsuario { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Atividade> AtividadesExpostas { get; set; }
+        public virtual Endereco Endereco { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Evento> EventosPromovidos { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Feedback> Feedbacks { get; set; }
         public virtual Perfil Perfil { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SalaDiscussao> SalasDiscussoes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Atividade> Atividades { get; set; }
+        public virtual ICollection<Atividade> AtividadesInscritas { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AreaInteresse> AreasInteresse { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Evento> Evento { get; set; }
     }
 }

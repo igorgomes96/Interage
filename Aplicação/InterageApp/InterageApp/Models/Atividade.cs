@@ -18,7 +18,7 @@ namespace InterageApp.Models
         public Atividade()
         {
             this.SalasDiscussoes = new HashSet<SalaDiscussao>();
-            this.Usuarios = new HashSet<Usuario>();
+            this.Participantes = new HashSet<Usuario>();
         }
     
         public int Codigo { get; set; }
@@ -26,11 +26,13 @@ namespace InterageApp.Models
         public string DescricaoAtividade { get; set; }
         public System.DateTime HorarioAtividade { get; set; }
         public string Endereco { get; set; }
+        public string EmailExpositor { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SalaDiscussao> SalasDiscussoes { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Usuario> Usuarios { get; set; }
         public virtual Evento Evento { get; set; }
+        public virtual Usuario Expositor { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Usuario> Participantes { get; set; }
     }
 }

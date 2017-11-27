@@ -96,6 +96,9 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -105,6 +108,9 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.3\lib\net45\System.Web.Http.Cors.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Http.Owin, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.3\lib\net45\System.Web.Http.Owin.dll</HintPath>
     </Reference>
@@ -183,32 +189,38 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Auth\UserAuth.cs" />
-    <Compile Include="Auth\UserReturn.cs" />
-    <Compile Include="Controllers\AutenticacaoController.cs" />
-    <Compile Include="Controllers\PerfisController.cs" />
+    <Compile Include="Controllers\AtividadesController.cs" />
+    <Compile Include="Controllers\EventosController.cs" />
+    <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="DTO\AreaInteresseDto.cs" />
+    <Compile Include="DTO\AtividadeDto.cs" />
+    <Compile Include="DTO\CredenciaisDto.cs" />
     <Compile Include="DTO\EnderecoDto.cs" />
+    <Compile Include="DTO\EventoDto.cs" />
+    <Compile Include="DTO\FeedbackDto.cs" />
     <Compile Include="DTO\PerfilDto.cs" />
+    <Compile Include="DTO\UsuarioCredenciaisDto.cs" />
     <Compile Include="DTO\UsuarioDto.cs" />
-    <Compile Include="Exceptions\AuthenticationFailureResult.cs" />
-    <Compile Include="Exceptions\NotFoundException.cs" />
-    <Compile Include="Filters\AuthenticationFilter.cs" />
-    <Compile Include="Filters\CustomIdentity.cs" />
-    <Compile Include="Mapping\AreaInteresseMapper.cs" />
-    <Compile Include="Mapping\IMapper.cs" />
-    <Compile Include="Mapping\PerfilMapper.cs" />
-    <Compile Include="Mapping\UsuarioMapper.cs" />
+    <Compile Include="Exceptions\ConflitoException.cs" />
+    <Compile Include="Exceptions\NaoEncontradoException.cs" />
+    <Compile Include="Mapping\Implementations\AreaInteresseMapper.cs" />
+    <Compile Include="Mapping\Implementations\EnderecoMapper.cs" />
+    <Compile Include="Mapping\Implementations\EventoMapper.cs" />
+    <Compile Include="Mapping\Implementations\FeedbackMapper.cs" />
+    <Compile Include="Mapping\Implementations\Mapper.cs" />
+    <Compile Include="Mapping\Implementations\UsuarioCredenciaisMapper.cs" />
+    <Compile Include="Mapping\Interfaces\ICollectionMapper.cs" />
+    <Compile Include="Mapping\Interfaces\IMapper.cs" />
+    <Compile Include="Mapping\Interfaces\ISingleMapper.cs" />
+    <Compile Include="Mapping\Implementations\PerfilMapper.cs" />
+    <Compile Include="Mapping\Implementations\UsuarioMapper.cs" />
     <Compile Include="Models\AreaInteresse.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Atividade.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\EnderecoEvento.cs">
-      <DependentUpon>Modelo.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\EnderecoUsuario.cs">
+    <Compile Include="Models\Endereco.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Evento.cs">
@@ -242,14 +254,13 @@
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\IRepository.cs" />
-    <Compile Include="Repository\Repository.cs" />
-    <Compile Include="Services\AuthService.cs" />
-    <Compile Include="Services\CryptoService.cs" />
-    <Compile Include="Services\IAuthService.cs" />
-    <Compile Include="Services\ICryptoService.cs" />
-    <Compile Include="Services\IService.cs" />
-    <Compile Include="Services\Service.cs" />
+    <Compile Include="Repository\Implementations\GenericRepository.cs" />
+    <Compile Include="Repository\Interfaces\IGenericRepository.cs" />
+    <Compile Include="Services\Implementations\EventosService.cs" />
+    <Compile Include="Services\Implementations\UsuariosService.cs" />
+    <Compile Include="Services\Interfaces\IAtividadesService.cs" />
+    <Compile Include="Services\Interfaces\IEventosService.cs" />
+    <Compile Include="Services\Interfaces\IUsuariosService.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -270,6 +281,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Auth\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
