@@ -1,163 +1,71 @@
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\InterageApp.dll.config
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\InterageApp.dll
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\InterageApp.pdb
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\Newtonsoft.Json.dll
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\System.Net.Http.Formatting.dll
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\System.Web.Helpers.dll
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\System.Web.Http.dll
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\System.Web.Http.WebHost.dll
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\System.Web.Mvc.dll
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\System.Web.Razor.dll
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\System.Web.Webpages.Deployment.dll
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\System.Web.Webpages.dll
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\System.Web.Webpages.Razor.dll
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\Unity.Abstractions.dll
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\Unity.Container.dll
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\Unity.Mvc.dll
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\WebActivatorEx.dll
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\Unity.Mvc.xml
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\System.Web.Razor.xml
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\System.Web.Webpages.xml
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\System.Web.Webpages.Deployment.xml
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\System.Web.Webpages.Razor.xml
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\System.Web.Helpers.xml
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\System.Web.Mvc.xml
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\Newtonsoft.Json.xml
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\System.Net.Http.Formatting.xml
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\System.Web.Http.xml
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\System.Web.Http.WebHost.xml
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\pt-br\System.Web.Razor.resources.dll
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\pt-br\System.Web.Webpages.resources.dll
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\pt-br\System.Web.Webpages.Deployment.resources.dll
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\pt-br\System.Web.Webpages.Razor.resources.dll
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\pt-br\System.Web.Helpers.resources.dll
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\pt-br\System.Web.Mvc.resources.dll
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\pt-br\System.Net.Http.Formatting.resources.dll
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\pt-br\System.Web.Http.resources.dll
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\pt-br\System.Web.Http.WebHost.resources.dll
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\obj\Debug\InterageApp.csprojResolveAssemblyReference.cache
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\obj\Debug\InterageApp.csproj.CoreCompileInputs.cache
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\obj\Debug\InterageApp.dll
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\obj\Debug\InterageApp.pdb
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\Microsoft.Practices.ServiceLocation.dll
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\Microsoft.Practices.Unity.Configuration.dll
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\Microsoft.Practices.Unity.dll
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\Microsoft.Practices.Unity.RegistrationByConvention.dll
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\Unity.WebApi.dll
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\Microsoft.Practices.ServiceLocation.pdb
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\Microsoft.Practices.ServiceLocation.xml
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\Microsoft.Practices.Unity.xml
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\Microsoft.Practices.Unity.Configuration.xml
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\Microsoft.Practices.Unity.RegistrationByConvention.xml
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\EntityFramework.dll
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\EntityFramework.SqlServer.dll
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\EntityFramework.xml
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\EntityFramework.SqlServer.xml
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\Microsoft.AspNet.Identity.Core.dll
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\Microsoft.AspNet.Identity.Owin.dll
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\Microsoft.Owin.dll
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\Microsoft.Owin.Host.SystemWeb.dll
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\Microsoft.Owin.Security.Cookies.dll
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\Microsoft.Owin.Security.dll
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\Microsoft.Owin.Security.OAuth.dll
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\Owin.dll
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\System.Web.Http.Owin.dll
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\Microsoft.AspNet.Identity.Core.xml
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\Microsoft.AspNet.Identity.Owin.xml
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\Microsoft.Owin.xml
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\Microsoft.Owin.Host.SystemWeb.xml
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\Microsoft.Owin.Security.xml
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\Microsoft.Owin.Security.Cookies.xml
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\Microsoft.Owin.Security.OAuth.xml
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\System.Web.Http.Owin.xml
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\Microsoft.AspNet.Identity.EntityFramework.dll
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\System.Web.Cors.dll
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\System.Web.Http.Cors.dll
-C:\Users\igorg\OneDrive\Faculdade\8º Período\PDSI 2\Aplicação\InterageApp\InterageApp\bin\System.Web.Http.Cors.xml
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\InterageApp.dll.config
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\InterageApp.dll
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\InterageApp.pdb
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\EntityFramework.dll
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\EntityFramework.SqlServer.dll
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\Microsoft.AspNet.Identity.Core.dll
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\Microsoft.AspNet.Identity.EntityFramework.dll
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\Microsoft.AspNet.Identity.Owin.dll
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\Microsoft.Owin.dll
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\Microsoft.Owin.Host.SystemWeb.dll
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\Microsoft.Owin.Security.Cookies.dll
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\Microsoft.Owin.Security.dll
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\Microsoft.Owin.Security.OAuth.dll
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\Microsoft.Practices.ServiceLocation.dll
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\Microsoft.Practices.Unity.Configuration.dll
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\Microsoft.Practices.Unity.dll
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\Microsoft.Practices.Unity.RegistrationByConvention.dll
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\Newtonsoft.Json.dll
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\Owin.dll
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\System.Net.Http.Formatting.dll
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\System.Web.Cors.dll
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\System.Web.Helpers.dll
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\System.Web.Http.Cors.dll
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\System.Web.Http.dll
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\System.Web.Http.Owin.dll
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\System.Web.Http.WebHost.dll
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\System.Web.Mvc.dll
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\System.Web.Razor.dll
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\System.Web.Webpages.Deployment.dll
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\System.Web.Webpages.dll
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\System.Web.Webpages.Razor.dll
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\Unity.Abstractions.dll
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\Unity.Container.dll
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\Unity.Mvc.dll
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\Unity.WebApi.dll
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\WebActivatorEx.dll
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\EntityFramework.xml
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\EntityFramework.SqlServer.xml
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\Microsoft.AspNet.Identity.Core.xml
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\Microsoft.AspNet.Identity.Owin.xml
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\Microsoft.Owin.xml
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\Microsoft.Owin.Host.SystemWeb.xml
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\Microsoft.Owin.Security.xml
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\Microsoft.Owin.Security.Cookies.xml
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\Microsoft.Owin.Security.OAuth.xml
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\Microsoft.Practices.ServiceLocation.pdb
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\Microsoft.Practices.ServiceLocation.xml
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\Microsoft.Practices.Unity.xml
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\Microsoft.Practices.Unity.Configuration.xml
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\Microsoft.Practices.Unity.RegistrationByConvention.xml
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\System.Web.Http.Cors.xml
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\System.Web.Http.Owin.xml
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\Unity.Mvc.xml
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\System.Web.Razor.xml
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\System.Web.Webpages.xml
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\System.Web.Webpages.Deployment.xml
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\System.Web.Webpages.Razor.xml
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\System.Web.Helpers.xml
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\System.Web.Mvc.xml
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\Newtonsoft.Json.xml
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\System.Net.Http.Formatting.xml
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\System.Web.Http.xml
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\System.Web.Http.WebHost.xml
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\pt-br\System.Web.Razor.resources.dll
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\pt-br\System.Web.Webpages.resources.dll
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\pt-br\System.Web.Webpages.Deployment.resources.dll
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\pt-br\System.Web.Webpages.Razor.resources.dll
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\pt-br\System.Web.Helpers.resources.dll
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\pt-br\System.Web.Mvc.resources.dll
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\pt-br\System.Net.Http.Formatting.resources.dll
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\pt-br\System.Web.Http.resources.dll
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\pt-br\System.Web.Http.WebHost.resources.dll
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\obj\Debug\InterageApp.csprojResolveAssemblyReference.cache
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\obj\Debug\InterageApp.csproj.CoreCompileInputs.cache
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\obj\Debug\InterageApp.dll
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\obj\Debug\InterageApp.pdb
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\obj\Debug\InterageApp.Migrations.Initial.resources
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\obj\Debug\InterageApp.csproj.GenerateResource.Cache
-C:\Users\igorago\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\obj\Debug\InterageApp.Migrations.DescricaoEvento_interesse_unq.resources
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\obj\Debug\InterageApp.csprojResolveAssemblyReference.cache
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\obj\Debug\InterageApp.csproj.CoreCompileInputs.cache
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\InterageApp.dll.config
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\InterageApp.dll
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\InterageApp.pdb
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\CommonServiceLocator.dll
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\EntityFramework.dll
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\EntityFramework.SqlServer.dll
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\Microsoft.IdentityModel.Logging.dll
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\Microsoft.IdentityModel.Tokens.dll
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\Newtonsoft.Json.dll
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\System.Net.Http.Formatting.dll
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\System.Web.Helpers.dll
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\System.Web.Http.dll
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\System.Web.Http.WebHost.dll
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\System.Web.Mvc.dll
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\System.Web.Razor.dll
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\System.Web.Webpages.Deployment.dll
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\System.Web.Webpages.dll
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\System.Web.Webpages.Razor.dll
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\Unity.Abstractions.dll
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\Unity.Configuration.dll
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\Unity.Container.dll
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\Unity.Interception.Configuration.dll
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\Unity.Interception.dll
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\Unity.RegistrationByConvention.dll
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\Unity.ServiceLocation.dll
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\Unity.WebApi.dll
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\CommonServiceLocator.pdb
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\EntityFramework.xml
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\EntityFramework.SqlServer.xml
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\Microsoft.IdentityModel.Logging.xml
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\Microsoft.IdentityModel.Tokens.xml
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\Newtonsoft.Json.xml
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\Unity.Abstractions.pdb
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\Unity.Configuration.pdb
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\Unity.Container.pdb
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\Unity.Interception.pdb
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\Unity.Interception.Configuration.pdb
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\Unity.RegistrationByConvention.pdb
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\Unity.ServiceLocation.pdb
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\System.Web.Razor.xml
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\System.Web.Webpages.xml
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\System.Web.Webpages.Deployment.xml
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\System.Web.Webpages.Razor.xml
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\System.Web.Helpers.xml
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\System.Web.Mvc.xml
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\System.Net.Http.Formatting.xml
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\System.Web.Http.xml
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\System.Web.Http.WebHost.xml
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\pt-br\System.Web.Razor.resources.dll
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\pt-br\System.Web.Webpages.resources.dll
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\pt-br\System.Web.Webpages.Deployment.resources.dll
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\pt-br\System.Web.Webpages.Razor.resources.dll
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\pt-br\System.Web.Helpers.resources.dll
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\pt-br\System.Web.Mvc.resources.dll
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\pt-br\System.Net.Http.Formatting.resources.dll
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\pt-br\System.Web.Http.resources.dll
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\pt-br\System.Web.Http.WebHost.resources.dll
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\obj\Debug\InterageApp.dll
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\obj\Debug\InterageApp.pdb
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\System.Web.Cors.dll
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\System.Web.Http.Cors.dll
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\bin\System.Web.Http.Cors.xml
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\obj\Debug\InterageApp.Migrations.Initial.resources
+C:\Users\igorago\Documents\GitHub\Temp\InterageApp\InterageApp\obj\Debug\InterageApp.csproj.GenerateResource.Cache

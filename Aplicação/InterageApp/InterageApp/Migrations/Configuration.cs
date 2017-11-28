@@ -13,21 +13,12 @@ namespace InterageApp.Migrations
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(Modelo context)
+        protected override void Seed(InterageApp.Models.Modelo context)
         {
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
-
+            //  to avoid creating duplicate seed data.
             context.Perfis.AddOrUpdate(
                 new Perfil { Codigo = 1, NomePerfil = "Promotor" },
                 new Perfil { Codigo = 2, NomePerfil = "Padrão" }

@@ -1,5 +1,6 @@
 ﻿using InterageApp.DTO;
 using InterageApp.Exceptions;
+using InterageApp.Filters;
 using InterageApp.Models;
 using InterageApp.Services.Interfaces;
 using System;
@@ -11,6 +12,7 @@ using System.Web.Http;
 
 namespace InterageApp.Controllers
 {
+    [JwtAuthentication]
     public class EventosController : ApiController
     {
         private readonly IEventosService _eventosService;
@@ -52,11 +54,9 @@ namespace InterageApp.Controllers
 
         public IHttpActionResult Post(EventoDto evento)
         {
-            if (!ModelState.IsValid)
-                return Content(HttpStatusCode.BadRequest, ModelState);
-
             try
             {
+                evento.EmailUsuarioPromotor = User.Identity.Name;
                 return Ok(_eventosService.CriarNovo(evento));
             }
             catch (ConflitoException<Evento> e)

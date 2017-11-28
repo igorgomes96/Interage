@@ -11,6 +11,7 @@ using InterageApp.Services.Interfaces;
 using Microsoft.Practices.Unity;
 using System.Data.Entity;
 using System.Web.Http;
+using Unity;
 using Unity.WebApi;
 
 namespace InterageApp
@@ -33,13 +34,19 @@ namespace InterageApp
             container.RegisterType<ISingleMapper<Evento, EventoDto>, EventoMapper>();
             container.RegisterType<ISingleMapper<Feedback, FeedbackDto>, FeedbackMapper>();
             container.RegisterType<ISingleMapper<Atividade, AtividadeDto>, AtividadeMapper>();
+            container.RegisterType<ISingleMapper<Evento, EventoDto>, EventoMapper>();
+            container.RegisterType(typeof(IMapper<,>), typeof(Mapper<,>));
+
+
             //container.RegisterType<IAtividadesService, AtividadesService>();
             container.RegisterType<IEventosService, EventosService>();
             container.RegisterType<IUsuariosService, UsuariosService>();
+            container.RegisterType<IValidateUserService, ValidateUserService>();
             container.RegisterType<IAreasInteresseService, AreasInteresseService>();
-            container.RegisterType<ISingleMapper<Evento, EventoDto>, EventoMapper>();
-            container.RegisterType(typeof(IMapper<,>), typeof(Mapper<,>));
+            
+
             container.RegisterType(typeof(IGenericRepository<,,>), typeof(GenericRepository<,,>));
+            container.RegisterType<IAuthValidateRepository, AuthValidateRepository>();
 
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
         }

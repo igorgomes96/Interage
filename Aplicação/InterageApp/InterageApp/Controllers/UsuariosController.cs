@@ -24,9 +24,6 @@ namespace InterageApp.Controllers
 
         public IHttpActionResult PostCadastrar(UsuarioCredenciaisDto usuario)
         {
-            if (!ModelState.IsValid)
-                return Content(HttpStatusCode.BadRequest, ModelState);
-
             try
             {
                 return Ok(_usuariosService.Cadastrar(usuario));

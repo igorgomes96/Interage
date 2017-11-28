@@ -9,7 +9,7 @@ namespace InterageApp.Models
     {
 
         public Modelo()
-            : base("name=ModeloTech")
+            : base("name=Modelo")
         {
         }
 
