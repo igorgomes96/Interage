@@ -57,6 +57,11 @@ namespace InterageApp.Services.Implementations
 
         public EventoDto ExcluirEvento(int id)
         {
+            foreach (AtividadeDto a in _atividadeRepository.Query(x => x.CodEvento == id))
+            {
+                _atividadeRepository.Delete(a.Codigo);
+            }
+
             return _eventoRepository.Delete(id) ?? throw new NaoEncontradoException<Evento>();
         }
 

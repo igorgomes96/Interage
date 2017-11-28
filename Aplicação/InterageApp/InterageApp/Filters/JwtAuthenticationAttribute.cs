@@ -45,6 +45,9 @@ namespace InterageApp.Filters
             username = null;
 
             var simplePrinciple = JwtManager.GetPrincipal(token.Remove(0,1).Remove(token.Length-2, 1));
+            if (simplePrinciple == null)
+                return false;
+
             var identity = simplePrinciple.Identity as ClaimsIdentity;
 
             if (identity == null)

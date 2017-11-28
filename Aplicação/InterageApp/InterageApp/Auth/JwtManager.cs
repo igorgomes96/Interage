@@ -2,6 +2,7 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using Microsoft.IdentityModel.Tokens;
+using System.Diagnostics;
 
 namespace InterageApp.Auth
 {
@@ -14,7 +15,7 @@ namespace InterageApp.Auth
         /// </summary>
         private const string Secret = "db3OIsj+BXE9NZDy0t8W3TcNekrF+2d/1sFnWG4HnV8TZY30iTOdtVWJG8abWvB1GlOgJuQZdcF2Luqm/hccMw==";
 
-        public static string GenerateToken(string username, int expireMinutes = 20)
+        public static string GenerateToken(string username, int expireMinutes = 120)
         {
             var symmetricKey = Convert.FromBase64String(Secret);
             var tokenHandler = new JwtSecurityTokenHandler();
@@ -64,8 +65,9 @@ namespace InterageApp.Auth
                 return principal;
             }
 
-            catch (Exception)
+            catch (Exception e)
             {
+                Trace.WriteLine(e.Message);
                 return null;
             }
         }

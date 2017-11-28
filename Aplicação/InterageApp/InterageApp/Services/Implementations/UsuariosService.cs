@@ -7,6 +7,7 @@ using InterageApp.DTO;
 using InterageApp.Models;
 using InterageApp.Repository.Interfaces;
 using InterageApp.Exceptions;
+using InterageApp.Auth;
 
 namespace InterageApp.Services.Implementations
 {
@@ -25,13 +26,14 @@ namespace InterageApp.Services.Implementations
             _enderecoRepository = enderecoRepository;
         }
 
-        public UsuarioCredenciaisDto Cadastrar(UsuarioCredenciaisDto usuario)
+        public string Cadastrar(UsuarioCredenciaisDto usuario)
         {
             try
             {
                 EnderecoDto endereco = _enderecoRepository.Save(usuario.Endereco);
                 usuario.CodEndereco = endereco.Codigo;
-                return _usuarioCredenciaisRepository.Save(usuario);
+                _usuarioCredenciaisRepository.Save(usuario);
+                return JwtManager.GenerateToken(usuario.Email);
             } catch (Exception e)
             {
                 if (_usuarioRepository.Existe(usuario.Email))

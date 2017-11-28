@@ -1,5 +1,6 @@
 ﻿using InterageApp.DTO;
 using InterageApp.Exceptions;
+using InterageApp.Filters;
 using InterageApp.Models;
 using InterageApp.Services.Interfaces;
 using System;
@@ -11,6 +12,7 @@ using System.Web.Http;
 
 namespace InterageApp.Controllers
 {
+    [JwtAuthentication]
     public class AtividadesController : ApiController
     {
         private readonly IAtividadesService _atividadesService;

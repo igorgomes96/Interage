@@ -14,8 +14,8 @@ namespace InterageApp.Services.Interfaces
         /// Faz o cadastro no Interage
         /// </summary>
         /// <param name="usuario">Usuário a se cadastrar</param>
-        /// <returns>Usuario cadastrado</returns>
-        UsuarioCredenciaisDto Cadastrar(UsuarioCredenciaisDto usuario);
+        /// <returns>Token de acesso</returns>
+        string Cadastrar(UsuarioCredenciaisDto usuario);
 
         /// <summary>
         /// Exclui o cadastro de um usuário do Interage
