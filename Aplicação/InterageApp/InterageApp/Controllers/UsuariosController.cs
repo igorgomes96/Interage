@@ -4,6 +4,7 @@ using InterageApp.Models;
 using InterageApp.Services.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -30,6 +31,10 @@ namespace InterageApp.Controllers
             } catch (ConflitoException<Usuario> e)
             {
                 return Content(HttpStatusCode.Conflict, e.Message);
+            }
+            catch (DbEntityValidationException)
+            {
+                return Content(HttpStatusCode.BadRequest, ModelState);
             }
             catch (Exception e)
             {
