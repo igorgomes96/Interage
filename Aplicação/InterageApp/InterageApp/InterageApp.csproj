@@ -206,6 +206,7 @@
     <Compile Include="Models\Endereco.cs" />
     <Compile Include="Models\Evento.cs" />
     <Compile Include="Models\Feedback.cs" />
+    <Compile Include="Models\Interacao.cs" />
     <Compile Include="Models\Modelo.cs" />
     <Compile Include="Models\Perfil.cs" />
     <Compile Include="Models\SalaDiscussao.cs" />

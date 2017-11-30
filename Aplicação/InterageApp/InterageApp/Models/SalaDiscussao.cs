@@ -26,5 +26,7 @@ namespace InterageApp.Models
         public virtual Atividade Atividade { get; set; }
         [ForeignKey("EmailUsuarioExpectador")]
         public virtual Usuario Usuario { get; set; }
+
+        public virtual ICollection<Interacao> Interacoes { get; set; }
     }
 }
