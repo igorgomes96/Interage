@@ -5,6 +5,7 @@ using InterageApp.Models;
 using InterageApp.Services.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -44,6 +45,10 @@ namespace InterageApp.Controllers
             try
             {
                 return Ok(_atividadesService.CriarNova(atividade));
+            }
+            catch (DbEntityValidationException)
+            {
+                return Content(HttpStatusCode.BadRequest, ModelState);
             }
             catch (Exception e)
             {
