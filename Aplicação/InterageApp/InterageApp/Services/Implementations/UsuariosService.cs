@@ -8,6 +8,7 @@ using InterageApp.Models;
 using InterageApp.Repository.Interfaces;
 using InterageApp.Exceptions;
 using InterageApp.Auth;
+using System.Threading;
 
 namespace InterageApp.Services.Implementations
 {
@@ -16,24 +17,38 @@ namespace InterageApp.Services.Implementations
         private readonly IGenericRepository<string, Usuario, UsuarioDto> _usuarioRepository;
         private readonly IGenericRepository<string, Usuario, UsuarioCredenciaisDto> _usuarioCredenciaisRepository;
         private readonly IGenericRepository<int, Endereco, EnderecoDto> _enderecoRepository;
+        
 
         public UsuariosService(IGenericRepository<string, Usuario, UsuarioDto> usuarioRepository,
             IGenericRepository<string, Usuario, UsuarioCredenciaisDto> usuarioCredenciaisRepository,
-            IGenericRepository<int, Endereco, EnderecoDto> enderecoRepository)
+            IGenericRepository<int, Endereco, EnderecoDto> enderecoRepository,
+            IEmailService emailService)
         {
             _usuarioRepository = usuarioRepository;
             _usuarioCredenciaisRepository = usuarioCredenciaisRepository;
             _enderecoRepository = enderecoRepository;
+           
         }
 
-        public string Cadastrar(UsuarioCredenciaisDto usuario)
+        public UsuarioDto BuscaUsuario(string email)
+        {
+            UsuarioDto user = _usuarioRepository.Find(email);
+            if (user == null)
+                throw new NaoEncontradoException<Usuario>("Usuário não encontrado!");
+
+            return user;
+        }
+
+        public UsuarioDto Cadastrar(UsuarioCredenciaisDto usuario)
         {
             try
             {
                 EnderecoDto endereco = _enderecoRepository.Save(usuario.Endereco);
                 usuario.CodEndereco = endereco.Codigo;
                 _usuarioCredenciaisRepository.Save(usuario);
-                return JwtManager.GenerateToken(usuario.Email);
+                UsuarioDto user = _usuarioRepository.Find(usuario.Email);
+                user.Token = JwtManager.GenerateToken(usuario.Email);
+                return user;
             } catch (Exception e)
             {
                 if (_usuarioRepository.Existe(usuario.Email))
@@ -54,5 +69,7 @@ namespace InterageApp.Services.Implementations
                 throw e;
             }
         }
+
+        
     }
 }

@@ -38,12 +38,14 @@ namespace InterageApp
             container.RegisterType(typeof(IMapper<,>), typeof(Mapper<,>));
 
 
-            //container.RegisterType<IAtividadesService, AtividadesService>();
+            container.RegisterType<IAtividadesService, AtividadesService>();
             container.RegisterType<IEventosService, EventosService>();
             container.RegisterType<IUsuariosService, UsuariosService>();
             container.RegisterType<IValidateUserService, ValidateUserService>();
             container.RegisterType<IAreasInteresseService, AreasInteresseService>();
-            
+            container.RegisterType<IFeedbacksService, FeedbacksService>();
+            container.RegisterType<IEmailService, EmailService>();
+
 
             container.RegisterType(typeof(IGenericRepository<,,>), typeof(GenericRepository<,,>));
             container.RegisterType<IAuthValidateRepository, AuthValidateRepository>();

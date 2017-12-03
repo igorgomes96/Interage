@@ -27,6 +27,8 @@ namespace InterageApp.DTO
         [Required(ErrorMessage = "O endereço do usuário precisa ser informadao!")]
         public int CodEndereco { get; set; }
 
+        public string Token { get; set; }
+
         
         public EnderecoDto Endereco { get; set; }
         public PerfilDto Perfil { get; set; }

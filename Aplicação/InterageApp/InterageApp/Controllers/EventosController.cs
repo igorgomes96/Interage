@@ -17,10 +17,25 @@ namespace InterageApp.Controllers
     public class EventosController : ApiController
     {
         private readonly IEventosService _eventosService;
+        private readonly IFeedbacksService _feedbackService;
 
-        public EventosController(IEventosService eventosService)
+        public EventosController(IEventosService eventosService, IFeedbacksService feedbackService)
         {
             _eventosService = eventosService;
+            _feedbackService = feedbackService;
+        }
+
+        [Route("api/Eventos/Todos")]
+        public IHttpActionResult GetAll()
+        {
+            try
+            {
+                return Ok(_eventosService.Listar());
+            }
+            catch (Exception e)
+            {
+                return Content(HttpStatusCode.InternalServerError, e.Message);
+            }
         }
 
         public IHttpActionResult Get()
@@ -96,6 +111,36 @@ namespace InterageApp.Controllers
             try
             {
                 return Ok(_eventosService.Atividades(id));
+            }
+            catch (Exception e)
+            {
+                return Content(HttpStatusCode.InternalServerError, e.Message);
+            }
+        }
+
+        [Route("api/Eventos/{id}/Feedbacks")]
+        public IHttpActionResult GetFeedbacks(int id)
+        {
+            try
+            {
+                return Ok(_feedbackService.List(id));
+            }
+            catch (Exception e)
+            {
+                return Content(HttpStatusCode.InternalServerError, e.Message);
+            }
+        }
+
+        [Route("api/Eventos/{id}/Feedbacks")]
+        public IHttpActionResult PostFeedbacks(int id, FeedbackDto feedback)
+        {
+            if (id != feedback.CodEvento) return Content(HttpStatusCode.BadRequest, "Código de Evento inconsistente!");
+
+            feedback.EmailUsuario = User.Identity.Name;
+
+            try
+            {
+                return Ok(_feedbackService.SaveFeedback(feedback));
             }
             catch (Exception e)
             {

@@ -14,8 +14,8 @@ namespace InterageApp.Services.Interfaces
         /// Faz o cadastro no Interage
         /// </summary>
         /// <param name="usuario">Usuário a se cadastrar</param>
-        /// <returns>Token de acesso</returns>
-        string Cadastrar(UsuarioCredenciaisDto usuario);
+        /// <returns>Usuário com o Token</returns>
+        UsuarioDto Cadastrar(UsuarioCredenciaisDto usuario);
 
         /// <summary>
         /// Exclui o cadastro de um usuário do Interage
@@ -23,5 +23,14 @@ namespace InterageApp.Services.Interfaces
         /// <param name="emailUsuario">Email do Usuário a ser excluído</param>
         /// <returns>Usuário excluído</returns>
         UsuarioDto ExcluirCadastro(string emailUsuario);
+
+        /// <summary>
+        /// Retorna o usuário.
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
+        UsuarioDto BuscaUsuario(string email);
+
+
     }
 }

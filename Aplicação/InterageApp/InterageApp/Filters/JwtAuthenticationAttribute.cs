@@ -44,7 +44,7 @@ namespace InterageApp.Filters
         {
             username = null;
 
-            var simplePrinciple = JwtManager.GetPrincipal(token.Remove(0,1).Remove(token.Length-2, 1));
+            var simplePrinciple = JwtManager.GetPrincipal(token);
             if (simplePrinciple == null)
                 return false;
 
@@ -69,9 +69,8 @@ namespace InterageApp.Filters
 
         protected Task<IPrincipal> AuthenticateJwtToken(string token)
         {
-            string username;
 
-            if (ValidateToken(token, out username))
+            if (ValidateToken(token, out string username))
             {
                 // based on username to get more information from database in order to build local identity
                 var claims = new List<Claim>

@@ -1,0 +1,13 @@
+temos
+CRUD evento
+lista de atividades
+CRUD de usuário
+Autenticação
+Front de recuperar a senha
+
+Falta
+cadastro de atividades pelo front
+envio e visualização de feedback
+integrar front de recupração de senha
+Busca de eventos (front e integração)
+Salas de discussão e interações

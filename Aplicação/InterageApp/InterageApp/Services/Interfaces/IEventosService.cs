@@ -15,7 +15,7 @@ namespace InterageApp.Services.Interfaces
         /// Se o usuário for promotor, lista os eventos promovidos por ele; se padrão, os eventos nos quais eles está inscrito.
         /// </summary>
         /// <returns></returns>
-        ICollection<EventoDto> Listar(string emailUsuario);
+        ICollection<EventoDto> Listar(string emailUsuario = null);
 
         /// <summary>
         /// Busca um Evento pelo Id.

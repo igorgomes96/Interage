@@ -1,4 +1,5 @@
 ﻿using InterageApp.DTO;
+using InterageApp.Filters;
 using InterageApp.Services.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ using System.Web.Http;
 
 namespace InterageApp.Controllers
 {
+    [JwtAuthentication]
     public class AreasInteresseController : ApiController
     {
         private readonly IAreasInteresseService _interesseService;

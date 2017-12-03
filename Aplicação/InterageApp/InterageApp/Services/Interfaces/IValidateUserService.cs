@@ -10,5 +10,11 @@ namespace InterageApp.Services.Interfaces
     public interface IValidateUserService
     {
         bool CheckUser(CredenciaisDto credenciais);
+
+        /// <summary>
+        /// Envia a senha para o email do usuário.
+        /// </summary>
+        /// <param name="email"></param>
+        void RecuperarSenha(string email);
     }
 }

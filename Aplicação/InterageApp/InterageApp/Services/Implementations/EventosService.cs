@@ -65,15 +65,20 @@ namespace InterageApp.Services.Implementations
             return _eventoRepository.Delete(id) ?? throw new NaoEncontradoException<Evento>();
         }
 
-        public ICollection<EventoDto> Listar(string emailUsuario)
+        public ICollection<EventoDto> Listar(string emailUsuario = null)
         {
             UsuarioDto usuario = _usuarioRepository.Find(emailUsuario);
-            if (usuario == null) throw new NaoEncontradoException<Usuario>();
+
+            if (usuario == null)
+                return _eventoRepository.List();
 
             if (usuario.Perfil.NomePerfil == "Promotor")
                 return _eventoRepository.Query(x => x.EmailUsuarioPromotor == emailUsuario);
-            else
+            else if (usuario.Perfil.NomePerfil == "Padrão")
                 return _eventoRepository.Query(x => x.Atividades.Any(y => y.Participantes.Any(z => z.Email == emailUsuario)));
+
+            return _eventoRepository.List();
+
         }
     }
 }

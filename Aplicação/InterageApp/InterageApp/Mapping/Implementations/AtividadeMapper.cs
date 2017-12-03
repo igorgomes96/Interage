@@ -27,9 +27,9 @@ namespace InterageApp.Mapping.Implementations
             {
                 Codigo = source.Codigo,
                 CodEvento = source.CodEvento,
+                Nome = source.Nome,
                 DescricaoAtividade = source.DescricaoAtividade,
                 HorarioAtividade = source.HorarioAtividade,
-                Endereco = source.Endereco,
                 EmailExpositor = source.EmailExpositor,
                 Evento = _eventoMapper.Map(source.Evento),
                 Expositor = _usuarioMapper.Map(source.Expositor)
@@ -42,9 +42,9 @@ namespace InterageApp.Mapping.Implementations
             {
                 Codigo = destination.Codigo,
                 CodEvento = destination.CodEvento,
+                Nome = destination.Nome,
                 DescricaoAtividade = destination.DescricaoAtividade,
                 HorarioAtividade = destination.HorarioAtividade,
-                Endereco = destination.Endereco,
                 EmailExpositor = destination.EmailExpositor
             };
         }
