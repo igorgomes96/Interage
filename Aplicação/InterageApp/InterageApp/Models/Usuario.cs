@@ -14,8 +14,7 @@ namespace InterageApp.Models
             AtividadesExpostas = new HashSet<Atividade>();
             EventosPromovidos = new HashSet<Evento>();
             Feedbacks = new HashSet<Feedback>();
-            SalasDiscussoes = new HashSet<SalaDiscussao>();
-            AtividadesInscritas = new HashSet<Atividade>();
+            EventosInscritos = new HashSet<Evento>();
             AreasInteresse = new HashSet<AreaInteresse>();
         }
 
@@ -50,8 +49,7 @@ namespace InterageApp.Models
         public virtual ICollection<Atividade> AtividadesExpostas { get; set; }
         public virtual ICollection<Evento> EventosPromovidos { get; set; }
         public virtual ICollection<Feedback> Feedbacks { get; set; }
-        public virtual ICollection<SalaDiscussao> SalasDiscussoes { get; set; }
-        public virtual ICollection<Atividade> AtividadesInscritas { get; set; }
+        public virtual ICollection<Evento> EventosInscritos { get; set; }
         public virtual ICollection<AreaInteresse> AreasInteresse { get; set; }
     }
 }

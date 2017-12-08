@@ -10,6 +10,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Description;
 
 namespace InterageApp.Controllers
 {
@@ -57,6 +58,24 @@ namespace InterageApp.Controllers
             try
             {
                 return Ok(_eventosService.Buscar(id));
+            }
+            catch (NaoEncontradoException<Evento> e)
+            {
+                return Content(HttpStatusCode.NotFound, e.Message);
+            }
+            catch (Exception e)
+            {
+                return Content(HttpStatusCode.InternalServerError, e.Message);
+            }
+        }
+
+        [ResponseType(typeof(bool))]
+        [Route("api/Eventos/{id}/VerificarInscricao")]
+        public IHttpActionResult GetVerificaInscricao(int id)
+        {
+            try
+            {
+                return Ok(_eventosService.VerificaInscricao(id, User.Identity.Name));
             }
             catch (NaoEncontradoException<Evento> e)
             {
@@ -145,6 +164,33 @@ namespace InterageApp.Controllers
             catch (Exception e)
             {
                 return Content(HttpStatusCode.InternalServerError, e.Message);
+            }
+        }
+
+        [Route("api/Eventos/{id}/Inscrever")]
+        public IHttpActionResult PostInscreverUsuario(int id)
+        {
+            try
+            {
+                _eventosService.InscreverParticipante(id, User.Identity.Name);
+                return Ok();
+            } catch (Exception e)
+            {
+                return Content(HttpStatusCode.BadRequest, e.Message);
+            }
+        }
+
+        [Route("api/Eventos/{id}/CancelarInscricao")]
+        public IHttpActionResult DeleteInscricaoUsuario(int id)
+        {
+            try
+            {
+                _eventosService.CancelarInscricao(id, User.Identity.Name);
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                return Content(HttpStatusCode.BadRequest, e.Message);
             }
         }
 

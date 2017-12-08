@@ -30,19 +30,5 @@ namespace InterageApp.Services.Interfaces
         /// <returns></returns>
         AtividadeDto ExcluirAtividade(int id);
 
-
-        /// <summary>
-        /// Inscreve um usuário na atividade.
-        /// </summary>
-        /// <param name="id"></param>
-        /// <param name="emailUsuario"></param>
-        void InscreverParticipante(int id, string emailUsuario);
-
-        /// <summary>
-        /// Cancela a inscrição de um usuário em uma determinada atividade
-        /// </summary>
-        /// <param name="id"></param>
-        /// <param name="emailUsuario"></param>
-        void CancelarInscricao(int id, string emailUsuario);
     }
 }

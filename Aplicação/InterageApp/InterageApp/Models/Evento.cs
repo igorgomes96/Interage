@@ -12,6 +12,7 @@ namespace InterageApp.Models
         {
             Atividades = new HashSet<Atividade>();
             Feedbacks = new HashSet<Feedback>();
+            Participantes = new HashSet<Usuario>();
         }
         
         [Key]
@@ -51,5 +52,6 @@ namespace InterageApp.Models
 
         public virtual ICollection<Atividade> Atividades { get; set; }
         public virtual ICollection<Feedback> Feedbacks { get; set; }
+        public virtual ICollection<Usuario> Participantes { get; set; }
     }
 }

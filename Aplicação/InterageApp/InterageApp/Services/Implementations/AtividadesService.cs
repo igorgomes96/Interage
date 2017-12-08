@@ -24,11 +24,6 @@ namespace InterageApp.Services.Implementations
             return _atividadeRep.Find(id);
         }
 
-        public void CancelarInscricao(int id, string emailUsuario)
-        {
-            throw new NotImplementedException();
-        }
-
         public AtividadeDto CriarNova(AtividadeDto atividade)
         {
             try { 
@@ -44,9 +39,5 @@ namespace InterageApp.Services.Implementations
             return _atividadeRep.Delete(id);
         }
 
-        public void InscreverParticipante(int id, string emailUsuario)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

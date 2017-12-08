@@ -49,6 +49,7 @@ namespace InterageApp
 
             container.RegisterType(typeof(IGenericRepository<,,>), typeof(GenericRepository<,,>));
             container.RegisterType<IAuthValidateRepository, AuthValidateRepository>();
+            container.RegisterType<IInscricoesEventosRepository, InscricoesEventosRepository>();
 
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
         }

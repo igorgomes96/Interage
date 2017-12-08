@@ -44,9 +44,9 @@ namespace InterageApp.Migrations
                     {
                         Codigo = c.Int(nullable: false, identity: true),
                         CodEvento = c.Int(nullable: false),
+                        Nome = c.String(nullable: false, maxLength: 20),
                         DescricaoAtividade = c.String(nullable: false, maxLength: 150),
                         HorarioAtividade = c.DateTime(nullable: false),
-                        Endereco = c.String(nullable: false, maxLength: 255),
                         EmailExpositor = c.String(nullable: false, maxLength: 50),
                     })
                 .PrimaryKey(t => t.Codigo)
@@ -96,12 +96,15 @@ namespace InterageApp.Migrations
                         TipoFeedback = c.String(nullable: false, maxLength: 50),
                         FeedbackMensagem = c.String(nullable: false, maxLength: 4000),
                         EmailUsuario = c.String(nullable: false, maxLength: 50),
+                        Evento_Codigo = c.Int(),
                     })
                 .PrimaryKey(t => t.Codigo)
-                .ForeignKey("dbo.Eventos", t => t.CodEvento)
+                .ForeignKey("dbo.Eventos", t => t.CodEvento, cascadeDelete: true)
                 .ForeignKey("dbo.Usuarios", t => t.EmailUsuario)
+                .ForeignKey("dbo.Eventos", t => t.Evento_Codigo)
                 .Index(t => t.CodEvento)
-                .Index(t => t.EmailUsuario);
+                .Index(t => t.EmailUsuario)
+                .Index(t => t.Evento_Codigo);
             
             CreateTable(
                 "dbo.Perfis",
@@ -114,31 +117,32 @@ namespace InterageApp.Migrations
                 .Index(t => t.NomePerfil, unique: true, name: "nome_perfil_unq");
             
             CreateTable(
-                "dbo.SalasDiscussao",
+                "dbo.SalasDiscussoes",
                 c => new
                     {
-                        Codigo = c.Int(nullable: false, identity: true),
+                        Id = c.Int(nullable: false, identity: true),
                         CodAtividade = c.Int(nullable: false),
-                        Fechada = c.Boolean(nullable: false),
-                        EmailUsuarioExpectador = c.String(nullable: false, maxLength: 50),
+                        Mensagem = c.String(),
+                        EmailUsuario = c.String(maxLength: 50),
+                        Hora = c.DateTime(nullable: false),
                     })
-                .PrimaryKey(t => t.Codigo)
-                .ForeignKey("dbo.Atividades", t => t.CodAtividade)
-                .ForeignKey("dbo.Usuarios", t => t.EmailUsuarioExpectador)
-                .Index(t => t.CodAtividade)
-                .Index(t => t.EmailUsuarioExpectador);
-            
-            CreateTable(
-                "dbo.AtividadesUsuarios",
-                c => new
-                    {
-                        CodAtividade = c.Int(nullable: false),
-                        EmailUsuario = c.String(nullable: false, maxLength: 50),
-                    })
-                .PrimaryKey(t => new { t.CodAtividade, t.EmailUsuario })
+                .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Atividades", t => t.CodAtividade)
                 .ForeignKey("dbo.Usuarios", t => t.EmailUsuario)
                 .Index(t => t.CodAtividade)
+                .Index(t => t.EmailUsuario);
+            
+            CreateTable(
+                "dbo.EventosUsuarios",
+                c => new
+                    {
+                        CodEvento = c.Int(nullable: false),
+                        EmailUsuario = c.String(nullable: false, maxLength: 50),
+                    })
+                .PrimaryKey(t => new { t.CodEvento, t.EmailUsuario })
+                .ForeignKey("dbo.Eventos", t => t.CodEvento)
+                .ForeignKey("dbo.Usuarios", t => t.EmailUsuario)
+                .Index(t => t.CodEvento)
                 .Index(t => t.EmailUsuario);
             
             CreateTable(
@@ -158,13 +162,14 @@ namespace InterageApp.Migrations
         
         public override void Down()
         {
+            DropForeignKey("dbo.SalasDiscussoes", "EmailUsuario", "dbo.Usuarios");
+            DropForeignKey("dbo.SalasDiscussoes", "CodAtividade", "dbo.Atividades");
             DropForeignKey("dbo.InteressesUsuarios", "EmailUsuario", "dbo.Usuarios");
             DropForeignKey("dbo.InteressesUsuarios", "CodAreaInteresse", "dbo.AreasInteresse");
+            DropForeignKey("dbo.EventosUsuarios", "EmailUsuario", "dbo.Usuarios");
+            DropForeignKey("dbo.EventosUsuarios", "CodEvento", "dbo.Eventos");
+            DropForeignKey("dbo.Feedbacks", "Evento_Codigo", "dbo.Eventos");
             DropForeignKey("dbo.Eventos", "CodEndereco", "dbo.Enderecos");
-            DropForeignKey("dbo.AtividadesUsuarios", "EmailUsuario", "dbo.Usuarios");
-            DropForeignKey("dbo.AtividadesUsuarios", "CodAtividade", "dbo.Atividades");
-            DropForeignKey("dbo.SalasDiscussao", "EmailUsuarioExpectador", "dbo.Usuarios");
-            DropForeignKey("dbo.SalasDiscussao", "CodAtividade", "dbo.Atividades");
             DropForeignKey("dbo.Usuarios", "CodigoPerfil", "dbo.Perfis");
             DropForeignKey("dbo.Feedbacks", "EmailUsuario", "dbo.Usuarios");
             DropForeignKey("dbo.Feedbacks", "CodEvento", "dbo.Eventos");
@@ -175,11 +180,12 @@ namespace InterageApp.Migrations
             DropForeignKey("dbo.Eventos", "CodAreaInteresse", "dbo.AreasInteresse");
             DropIndex("dbo.InteressesUsuarios", new[] { "EmailUsuario" });
             DropIndex("dbo.InteressesUsuarios", new[] { "CodAreaInteresse" });
-            DropIndex("dbo.AtividadesUsuarios", new[] { "EmailUsuario" });
-            DropIndex("dbo.AtividadesUsuarios", new[] { "CodAtividade" });
-            DropIndex("dbo.SalasDiscussao", new[] { "EmailUsuarioExpectador" });
-            DropIndex("dbo.SalasDiscussao", new[] { "CodAtividade" });
+            DropIndex("dbo.EventosUsuarios", new[] { "EmailUsuario" });
+            DropIndex("dbo.EventosUsuarios", new[] { "CodEvento" });
+            DropIndex("dbo.SalasDiscussoes", new[] { "EmailUsuario" });
+            DropIndex("dbo.SalasDiscussoes", new[] { "CodAtividade" });
             DropIndex("dbo.Perfis", "nome_perfil_unq");
+            DropIndex("dbo.Feedbacks", new[] { "Evento_Codigo" });
             DropIndex("dbo.Feedbacks", new[] { "EmailUsuario" });
             DropIndex("dbo.Feedbacks", new[] { "CodEvento" });
             DropIndex("dbo.Usuarios", new[] { "CodEndereco" });
@@ -191,8 +197,8 @@ namespace InterageApp.Migrations
             DropIndex("dbo.Eventos", new[] { "CodAreaInteresse" });
             DropIndex("dbo.AreasInteresse", "interesse_unq");
             DropTable("dbo.InteressesUsuarios");
-            DropTable("dbo.AtividadesUsuarios");
-            DropTable("dbo.SalasDiscussao");
+            DropTable("dbo.EventosUsuarios");
+            DropTable("dbo.SalasDiscussoes");
             DropTable("dbo.Perfis");
             DropTable("dbo.Feedbacks");
             DropTable("dbo.Enderecos");

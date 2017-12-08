@@ -23,6 +23,14 @@ namespace InterageApp.Migrations
                 new Perfil { Codigo = 1, NomePerfil = "Promotor" },
                 new Perfil { Codigo = 2, NomePerfil = "Padrão" }
             );
+
+            context.AreasInteresse.RemoveRange(context.AreasInteresse);
+            context.SaveChanges();
+
+            context.AreasInteresse.AddOrUpdate(
+                new AreaInteresse { Interesse = "Computação" },
+                new AreaInteresse { Interesse = "Engenharia" }
+            );
         }
     }
 }

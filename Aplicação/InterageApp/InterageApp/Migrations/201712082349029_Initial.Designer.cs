@@ -13,7 +13,7 @@ namespace InterageApp.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201711281848568_Initial"; }
+            get { return "201712082349029_Initial"; }
         }
         
         string IMigrationMetadata.Source

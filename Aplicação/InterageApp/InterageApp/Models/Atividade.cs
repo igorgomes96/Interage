@@ -8,11 +8,6 @@ namespace InterageApp.Models
     [Table("Atividades")]
     public partial class Atividade
     {
-        public Atividade()
-        {
-            SalasDiscussoes = new HashSet<SalaDiscussao>();
-            Participantes = new HashSet<Usuario>();
-        }
     
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -43,7 +38,5 @@ namespace InterageApp.Models
         [ForeignKey("EmailExpositor")]
         public virtual Usuario Expositor { get; set; }
 
-        public virtual ICollection<SalaDiscussao> SalasDiscussoes { get; set; }
-        public virtual ICollection<Usuario> Participantes { get; set; }
     }
 }

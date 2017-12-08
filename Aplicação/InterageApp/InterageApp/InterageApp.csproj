@@ -172,6 +172,7 @@
     <Compile Include="DTO\EnderecoDto.cs" />
     <Compile Include="DTO\EventoDto.cs" />
     <Compile Include="DTO\FeedbackDto.cs" />
+    <Compile Include="DTO\InteracaoDto.cs" />
     <Compile Include="DTO\PerfilDto.cs" />
     <Compile Include="DTO\UsuarioCredenciaisDto.cs" />
     <Compile Include="DTO\UsuarioDto.cs" />
@@ -190,6 +191,7 @@
     <Compile Include="Mapping\Implementations\EnderecoMapper.cs" />
     <Compile Include="Mapping\Implementations\EventoMapper.cs" />
     <Compile Include="Mapping\Implementations\FeedbackMapper.cs" />
+    <Compile Include="Mapping\Implementations\InteracaoMapper.cs" />
     <Compile Include="Mapping\Implementations\Mapper.cs" />
     <Compile Include="Mapping\Implementations\PerfilMapper.cs" />
     <Compile Include="Mapping\Implementations\UsuarioCredenciaisMapper.cs" />
@@ -197,13 +199,9 @@
     <Compile Include="Mapping\Interfaces\ICollectionMapper.cs" />
     <Compile Include="Mapping\Interfaces\IMapper.cs" />
     <Compile Include="Mapping\Interfaces\ISingleMapper.cs" />
-    <Compile Include="Migrations\201711281848568_Initial.cs" />
-    <Compile Include="Migrations\201711281848568_Initial.Designer.cs">
-      <DependentUpon>201711281848568_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712031359096_AjusteAtividades.cs" />
-    <Compile Include="Migrations\201712031359096_AjusteAtividades.Designer.cs">
-      <DependentUpon>201712031359096_AjusteAtividades.cs</DependentUpon>
+    <Compile Include="Migrations\201712082349029_Initial.cs" />
+    <Compile Include="Migrations\201712082349029_Initial.Designer.cs">
+      <DependentUpon>201712082349029_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AreaInteresse.cs" />
@@ -214,18 +212,20 @@
     <Compile Include="Models\Interacao.cs" />
     <Compile Include="Models\Modelo.cs" />
     <Compile Include="Models\Perfil.cs" />
-    <Compile Include="Models\SalaDiscussao.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\Implementations\AuthValidateRepository.cs" />
     <Compile Include="Repository\Implementations\GenericRepository.cs" />
+    <Compile Include="Repository\Implementations\InscricoesEventosRepository.cs" />
     <Compile Include="Repository\Interfaces\IAuthValidateRepository.cs" />
     <Compile Include="Repository\Interfaces\IGenericRepository.cs" />
+    <Compile Include="Repository\Interfaces\IInscricoesEventosRepository.cs" />
     <Compile Include="Services\Implementations\AreasInteresseService.cs" />
     <Compile Include="Services\Implementations\AtividadesService.cs" />
     <Compile Include="Services\Implementations\EmailService.cs" />
     <Compile Include="Services\Implementations\EventosService.cs" />
     <Compile Include="Services\Implementations\FeedbacksService.cs" />
+    <Compile Include="Services\Implementations\InteracaoService.cs" />
     <Compile Include="Services\Implementations\UsuariosService.cs" />
     <Compile Include="Services\Implementations\ValidateUserService.cs" />
     <Compile Include="Services\Interfaces\IAreasInteresseService.cs" />
@@ -233,6 +233,7 @@
     <Compile Include="Services\Interfaces\IEmailService.cs" />
     <Compile Include="Services\Interfaces\IEventosService.cs" />
     <Compile Include="Services\Interfaces\IFeedbacksService.cs" />
+    <Compile Include="Services\Interfaces\IInteracaoService.cs" />
     <Compile Include="Services\Interfaces\IUsuariosService.cs" />
     <Compile Include="Services\Interfaces\IValidateUserService.cs" />
   </ItemGroup>
@@ -249,11 +250,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201711281848568_Initial.resx">
-      <DependentUpon>201711281848568_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712031359096_AjusteAtividades.resx">
-      <DependentUpon>201712031359096_AjusteAtividades.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201712082349029_Initial.resx">
+      <DependentUpon>201712082349029_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

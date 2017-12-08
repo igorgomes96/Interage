@@ -46,5 +46,27 @@ namespace InterageApp.Services.Interfaces
         /// <param name="id">Id do Evento</param>
         /// <returns>Atividade do evento</returns>
         ICollection<AtividadeDto> Atividades(int id);
+
+        /// <summary>
+        /// Inscreve um usuário na evento.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="emailUsuario"></param>
+        void InscreverParticipante(int id, string emailUsuario);
+
+        /// <summary>
+        /// Cancela a inscrição de um usuário de uma determinado evento
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="emailUsuario"></param>
+        void CancelarInscricao(int id, string emailUsuario);
+
+        /// <summary>
+        /// Verifica se o usuário já está inscrito no evento
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="emailUsuario"></param>
+        /// <returns></returns>
+        bool VerificaInscricao(int id, string emailUsuario);
     }
 }

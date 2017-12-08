@@ -72,49 +72,5 @@ namespace InterageApp.Controllers
             }
         }
 
-        [Route("api/Atividades/{id}/InscreverParticipante/{emailUsuario}")]
-        public IHttpActionResult PostInscreverParticipante(int id, string emailUsuario)
-        {
-            try
-            {
-                _atividadesService.InscreverParticipante(id, emailUsuario);
-                return Ok();
-            }
-            catch (NaoEncontradoException<Atividade> e)
-            {
-                return Content(HttpStatusCode.NotFound, e.Message);
-            }
-            catch (NaoEncontradoException<Usuario> e)
-            {
-                return Content(HttpStatusCode.NotFound, e.Message);
-            }
-            catch (Exception e)
-            {
-                return Content(HttpStatusCode.InternalServerError, e.Message);
-            }
-        }
-
-        [Route("api/Atividades/{id}/CancelarInscricao/{emailUsuario}")]
-        public IHttpActionResult DeleteCancelarInscricao(int id, string emailUsuario)
-        {
-            try
-            {
-                _atividadesService.CancelarInscricao(id, emailUsuario);
-                return Ok();
-            }
-            catch (NaoEncontradoException<Atividade> e)
-            {
-                return Content(HttpStatusCode.NotFound, e.Message);
-            }
-            catch (NaoEncontradoException<Usuario> e)
-            {
-                return Content(HttpStatusCode.NotFound, e.Message);
-            }
-            catch (Exception e)
-            {
-                return Content(HttpStatusCode.InternalServerError, e.Message);
-            }
-        }
-
     }
 }

@@ -18,19 +18,19 @@ namespace InterageApp.Models
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
             modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
 
-            modelBuilder.Entity<Atividade>()
+            modelBuilder.Entity<Evento>()
                 .HasMany(c => c.Participantes)
-                .WithMany(c => c.AtividadesInscritas)                 // Note the empty WithMany()
+                .WithMany(c => c.EventosInscritos)
                 .Map(x =>
                 {
-                    x.MapLeftKey("CodAtividade");
+                    x.MapLeftKey("CodEvento");
                     x.MapRightKey("EmailUsuario");
-                    x.ToTable("AtividadesUsuarios");
+                    x.ToTable("EventosUsuarios");
                 });
 
             modelBuilder.Entity<AreaInteresse>()
                 .HasMany(c => c.UsuariosInteressados)
-                .WithMany(c => c.AreasInteresse)                 // Note the empty WithMany()
+                .WithMany(c => c.AreasInteresse)
                 .Map(x =>
                 {
                     x.MapLeftKey("CodAreaInteresse");
@@ -38,6 +38,10 @@ namespace InterageApp.Models
                     x.ToTable("InteressesUsuarios");
                 });
 
+            modelBuilder.Entity<Feedback>()
+                .HasRequired(x => x.Evento)
+                .WithMany()
+                .WillCascadeOnDelete(true);
 
             base.OnModelCreating(modelBuilder);
         }
@@ -48,8 +52,8 @@ namespace InterageApp.Models
         public virtual DbSet<Evento> Eventos { get; set; }
         public virtual DbSet<Feedback> Feedbacks { get; set; }
         public virtual DbSet<Perfil> Perfis { get; set; }
-        public virtual DbSet<SalaDiscussao> SalasDiscussao { get; set; }
         public virtual DbSet<Usuario> Usuarios { get; set; }
+        public virtual DbSet<Interacao> SalasDiscussoes { get; set; }
 
     }
 

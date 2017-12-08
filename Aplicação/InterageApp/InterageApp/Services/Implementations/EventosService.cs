@@ -16,16 +16,19 @@ namespace InterageApp.Services.Implementations
         private readonly IGenericRepository<string, Usuario, UsuarioDto> _usuarioRepository;
         private readonly IGenericRepository<int, Atividade, AtividadeDto> _atividadeRepository;
         private readonly IGenericRepository<int, Endereco, EnderecoDto> _enderecoRepository;
+        private readonly IInscricoesEventosRepository _inscricoesRepositoy;
 
         public EventosService(IGenericRepository<int, Evento, EventoDto> eventoRepository, 
             IGenericRepository<string, Usuario, UsuarioDto> usuarioRepository,
             IGenericRepository<int, Atividade, AtividadeDto> atividadeRepository,
-            IGenericRepository<int, Endereco, EnderecoDto> enderecoRepository)
+            IGenericRepository<int, Endereco, EnderecoDto> enderecoRepository,
+            IInscricoesEventosRepository inscricoesRepositoy)
         {
             _eventoRepository = eventoRepository;
             _usuarioRepository = usuarioRepository;
             _atividadeRepository = atividadeRepository;
             _enderecoRepository = enderecoRepository;
+            _inscricoesRepositoy = inscricoesRepositoy;
         }
 
         public ICollection<AtividadeDto> Atividades(int id)
@@ -36,6 +39,11 @@ namespace InterageApp.Services.Implementations
         public EventoDto Buscar(int id)
         {
             return _eventoRepository.Find(id) ?? throw new NaoEncontradoException<Evento>();
+        }
+
+        public void CancelarInscricao(int id, string emailUsuario)
+        {
+            _inscricoesRepositoy.CancelarInscricao(id, emailUsuario);
         }
 
         public EventoDto CriarNovo(EventoDto evento)
@@ -65,6 +73,11 @@ namespace InterageApp.Services.Implementations
             return _eventoRepository.Delete(id) ?? throw new NaoEncontradoException<Evento>();
         }
 
+        public void InscreverParticipante(int id, string emailUsuario)
+        {
+            _inscricoesRepositoy.InscreverParticipante(id, emailUsuario);
+        }
+
         public ICollection<EventoDto> Listar(string emailUsuario = null)
         {
             UsuarioDto usuario = _usuarioRepository.Find(emailUsuario);
@@ -75,10 +88,15 @@ namespace InterageApp.Services.Implementations
             if (usuario.Perfil.NomePerfil == "Promotor")
                 return _eventoRepository.Query(x => x.EmailUsuarioPromotor == emailUsuario);
             else if (usuario.Perfil.NomePerfil == "Padrão")
-                return _eventoRepository.Query(x => x.Atividades.Any(y => y.Participantes.Any(z => z.Email == emailUsuario)));
+                return _eventoRepository.Query(x => x.Participantes.Any(y => y.Email == emailUsuario));
 
             return _eventoRepository.List();
 
+        }
+
+        public bool VerificaInscricao(int id, string emailUsuario)
+        {
+            return _inscricoesRepositoy.VerificaInscricao(id, emailUsuario);
         }
     }
 }

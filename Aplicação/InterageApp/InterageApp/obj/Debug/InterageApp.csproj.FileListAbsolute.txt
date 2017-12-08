@@ -205,10 +205,9 @@ C:\Users\igorg\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin
 C:\Users\igorg\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\pt-br\System.Net.Http.Formatting.resources.dll
 C:\Users\igorg\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\pt-br\System.Web.Http.resources.dll
 C:\Users\igorg\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\bin\pt-br\System.Web.Http.WebHost.resources.dll
-C:\Users\igorg\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\obj\Debug\InterageApp.Migrations.Initial.resources
-C:\Users\igorg\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\obj\Debug\InterageApp.csproj.GenerateResource.Cache
 C:\Users\igorg\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\obj\Debug\InterageApp.csproj.CoreCompileInputs.cache
 C:\Users\igorg\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\obj\Debug\InterageApp.dll
 C:\Users\igorg\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\obj\Debug\InterageApp.pdb
 C:\Users\igorg\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\obj\Debug\InterageApp.csprojResolveAssemblyReference.cache
-C:\Users\igorg\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\obj\Debug\InterageApp.Migrations.AjusteAtividades.resources
+C:\Users\igorg\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\obj\Debug\InterageApp.Migrations.Initial.resources
+C:\Users\igorg\Documents\GitHub\Interage\Aplicação\InterageApp\InterageApp\obj\Debug\InterageApp.csproj.GenerateResource.Cache
