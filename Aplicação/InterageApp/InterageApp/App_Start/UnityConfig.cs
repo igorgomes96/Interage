@@ -34,6 +34,7 @@ namespace InterageApp
             container.RegisterType<ISingleMapper<Evento, EventoDto>, EventoMapper>();
             container.RegisterType<ISingleMapper<Feedback, FeedbackDto>, FeedbackMapper>();
             container.RegisterType<ISingleMapper<Atividade, AtividadeDto>, AtividadeMapper>();
+            container.RegisterType<ISingleMapper<Interacao, InteracaoDto>, InteracaoMapper>();
             container.RegisterType<ISingleMapper<Evento, EventoDto>, EventoMapper>();
             container.RegisterType(typeof(IMapper<,>), typeof(Mapper<,>));
 
@@ -44,6 +45,7 @@ namespace InterageApp
             container.RegisterType<IValidateUserService, ValidateUserService>();
             container.RegisterType<IAreasInteresseService, AreasInteresseService>();
             container.RegisterType<IFeedbacksService, FeedbacksService>();
+            container.RegisterType<IInteracaoService, InteracaoService>();
             container.RegisterType<IEmailService, EmailService>();
 
 

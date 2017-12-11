@@ -18,9 +18,11 @@ namespace InterageApp.Services.Implementations
             _interacaoRep = interacaoRep;
         }
 
-        public void EnviarMensagem(InteracaoDto interacao)
+        public InteracaoDto EnviarMensagem(InteracaoDto interacao)
         {
-            _interacaoRep.Save(interacao);
+            interacao.Hora = DateTime.Now;
+            InteracaoDto inter = _interacaoRep.Save(interacao);
+            return inter;
         }
 
         public ICollection<InteracaoDto> List(int codAtividade)

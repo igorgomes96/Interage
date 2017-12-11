@@ -164,6 +164,7 @@
     <Compile Include="Controllers\AtividadesController.cs" />
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\EventosController.cs" />
+    <Compile Include="Controllers\InteracoesController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="DTO\AreaInteresseDto.cs" />
     <Compile Include="DTO\AtividadeDto.cs" />
@@ -248,6 +249,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\SalasDiscussoes\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201712082349029_Initial.resx">

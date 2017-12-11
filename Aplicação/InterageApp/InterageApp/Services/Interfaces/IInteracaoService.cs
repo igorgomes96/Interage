@@ -22,7 +22,7 @@ namespace InterageApp.Services.Interfaces
         /// </summary>
         /// <param name="interacao"></param>
         /// <returns></returns>
-        void EnviarMensagem(InteracaoDto codAtividade);
+        InteracaoDto EnviarMensagem(InteracaoDto codAtividade);
 
     }
 }
