@@ -14,6 +14,15 @@ namespace InterageApp.Filters
         public string Realm { get; set; }
         public bool AllowMultiple => false;
 
+        /// <summary>
+        /// Verifica se o usuário está autenticado. (Possui um token de acesso no header 'Authorization')
+        /// Verifica se o token é válido.
+        /// Obtém as informações de acesso e perfis do usuário.
+        /// Anexa o objeto Principal à thread principal e ao contexto.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
         public async Task AuthenticateAsync(HttpAuthenticationContext context, CancellationToken cancellationToken)
         {
             var request = context.Request;
@@ -40,6 +49,12 @@ namespace InterageApp.Filters
 
 
 
+        /// <summary>
+        /// Verifica a validade do token e obtém as informações de acesso.
+        /// </summary>
+        /// <param name="token">Token de acesso</param>
+        /// <param name="username">Email do usuário (parametrô de saída - out)</param>
+        /// <returns>true, se o token for válid; false, se não</returns>
         private static bool ValidateToken(string token, out string username)
         {
             username = null;

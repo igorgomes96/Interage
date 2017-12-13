@@ -10,6 +10,11 @@ namespace InterageApp.Repository.Interfaces
 {
     public interface IAuthValidateRepository
     {
+        /// <summary>
+        /// Busca as credenciais do usuário no banco.
+        /// </summary>
+        /// <param name="email">Email do Usuário</param>
+        /// <returns>Credenciais do usuário</returns>
         Usuario GetCredenciais(string email);
     }
 }

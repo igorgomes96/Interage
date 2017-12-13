@@ -8,13 +8,15 @@ namespace InterageApp.Auth
 {
     public static class JwtManager
     {
-        /// <summary>
-        /// Use the below code to generate symmetric Secret Key
-        ///     var hmac = new HMACSHA256();
-        ///     var key = Convert.ToBase64String(hmac.Key);
-        /// </summary>
+
         private const string Secret = "db3OIsj+BXE9NZDy0t8W3TcNekrF+2d/1sFnWG4HnV8TZY30iTOdtVWJG8abWvB1GlOgJuQZdcF2Luqm/hccMw==";
 
+       /// <summary>
+       /// Gera o token para acesso à aplicação.
+       /// </summary>
+       /// <param name="username"></param>
+       /// <param name="expireMinutes"></param>
+       /// <returns></returns>
         public static string GenerateToken(string username, int expireMinutes = 120)
         {
             var symmetricKey = Convert.FromBase64String(Secret);
@@ -39,6 +41,11 @@ namespace InterageApp.Auth
             return token;
         }
 
+        /// <summary>
+        /// Retorna as informações de acesso do usuário a partir de seu token.
+        /// </summary>
+        /// <param name="token">Token de acesso</param>
+        /// <returns>Informações de acesso</returns>
         public static ClaimsPrincipal GetPrincipal(string token)
         {
             try
@@ -59,8 +66,7 @@ namespace InterageApp.Auth
                    IssuerSigningKey = new SymmetricSecurityKey(symmetricKey)
                 };
 
-                SecurityToken securityToken;
-                var principal = tokenHandler.ValidateToken(token, validationParameters, out securityToken);
+                var principal = tokenHandler.ValidateToken(token, validationParameters, out SecurityToken securityToken);
 
                 return principal;
             }

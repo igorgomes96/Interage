@@ -14,7 +14,7 @@ namespace InterageApp.Services.Interfaces
         /// <summary>
         /// Envia a senha para o email do usuário.
         /// </summary>
-        /// <param name="email"></param>
+        /// <param name="email">Email do usuário para recuperação</param>
         void RecuperarSenha(string email);
     }
 }
